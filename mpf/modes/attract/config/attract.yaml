@@ -1,0 +1,12 @@
+#config_version=6
+
+slide_player:
+  mode_attract_started:
+    attract:
+      action: play
+  
+light_player:
+  mode_attract_started: 
+   insert: FFFFFF
+   T_GI: FF0000
+   
