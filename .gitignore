@@ -15,4 +15,5 @@ bin
 audits.yaml
 
 CyberRace-MC
-gmc_dmd
+*.arm64
+*.sh

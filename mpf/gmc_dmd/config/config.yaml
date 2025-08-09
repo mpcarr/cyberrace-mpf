@@ -1,0 +1,27 @@
+#config_version=6
+
+## MPF Main Machine Config File
+#
+# This file defines your system-wide properties like switches,
+# drivers, ball devices, hardware platforms, and more. You can
+# include everything here, or create sub-config files to be
+# imported and merged with this one.
+
+modes:
+  - attract
+  - base
+
+hardware:
+  platform: virtual
+  rgb_dmd: smartmatrix
+
+
+smartmatrix:
+  fast_rgb_dmd:
+    port: /dev/tty.usbserial-3100
+    baud: 3000000
+
+rgb_dmds:
+  fast_rgb_dmd:
+    hardware_brightness: 0.1
+    source_display: main
