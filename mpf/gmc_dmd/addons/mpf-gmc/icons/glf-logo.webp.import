@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddk5t7pyknjoo"
-path="res://.godot/imported/Mesh.svg-58472f3831ec61e10166d5890b6747af.ctex"
+uid="uid://0ap5b0v1p38w"
+path="res://.godot/imported/glf-logo.webp-38053be9e08f01f2cdc671a7f0910375.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/mpf-gmc/icons/Mesh.svg"
-dest_files=["res://.godot/imported/Mesh.svg-58472f3831ec61e10166d5890b6747af.ctex"]
+source_file="res://addons/mpf-gmc/icons/glf-logo.webp"
+dest_files=["res://.godot/imported/glf-logo.webp-38053be9e08f01f2cdc671a7f0910375.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

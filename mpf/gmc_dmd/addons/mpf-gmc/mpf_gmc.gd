@@ -13,6 +13,9 @@ var util
 var keyboard: = {}
 var config
 var local_config
+var version: String
+
+var _suppress_input := true
 
 func _init():
 
@@ -24,7 +27,10 @@ func _init():
 
 	var plugin_config = ConfigFile.new()
 	var perr = plugin_config.load("res://addons/mpf-gmc/plugin.cfg")
-	self.log.log("Initializing GMC version %s" % plugin_config.get_value("plugin", "version"))
+	if perr != OK:
+		self.log.error("Error loading GMC plugin file.")
+	self.version = plugin_config.get_value("plugin", "version", "UNKNOWN")
+	self.log.log("Initializing GMC version %s" % self.version)
 
 	for cfg in [[CONFIG_PATH, "config"], [LOCAL_CONFIG_PATH, "local_config"]]:
 		self[cfg[1]] = ConfigFile.new()
@@ -37,6 +43,9 @@ func _init():
 		if err != OK:
 			# Error 7 is file not found, that's okay
 			if err == ERR_FILE_NOT_FOUND:
+				# But still, everybody *should* have a gmc.cfg
+				if cfg[0] == CONFIG_PATH:
+					self.log.warning("Unable to find gmc.cfg in the project root.")
 				pass
 			else:
 				self.log.error("Error loading GMC config file '%s': %s" % [cfg[0], error_string(err)])
@@ -82,6 +91,14 @@ func _enter_tree():
 	self.add_child(process)
 	self.add_child(game)
 
+	# Initialize window parameters
+	var scale = self.get_config_value("window", "scale", 1.0)
+	if scale != 1.0:
+		get_window().content_scale_factor = scale
+	var size = self.get_config_value("window", "size", 0)
+	if size:
+		get_window().size = size
+
 func _ready():
 	if self.config.has_section("keyboard"):
 		for key in self.config.get_section_keys("keyboard"):
@@ -112,8 +129,8 @@ func has_config_section(section: String) -> bool:
 func has_local_config_value(section: String, key: String) -> bool:
 	return self.local_config.has_section_key(section, key)
 
-func validate_min_version(compare_version: String) -> bool:
-	return _explode_version_string(compare_version) >= _explode_version_string(MPF_MIN_VERSION)
+func validate_min_version(compare_version: String, min_version: String) -> bool:
+	return _explode_version_string(compare_version) >= _explode_version_string(min_version)
 
 func _explode_version_string(version: String) -> int:
 	var bits = version.split(".")
@@ -122,12 +139,30 @@ func _explode_version_string(version: String) -> int:
 	bits[3] = bits[3].trim_prefix("dev")
 	return int(bits[0]) * 1_000_000 + int(bits[1]) * 10_000 + int(bits[2]) * 100 + int(bits[3])
 
-func _unhandled_input(event: InputEvent) -> void:
-	if not event.is_class("InputEventKey"):
+func ignore_input() -> void:
+	self._suppress_input = false
+
+func _input(event: InputEvent) -> void:
+	if not self._suppress_input:
 		return
+
+	# Don't accept any non-keyboard input
+	if not event.is_class("InputEventKey"):
+		get_tree().get_root().set_input_as_handled()
+		return
+
+	# ALWAYS set the input as handled to prevent Godot default InputMap
+	# from trying to manage UI. The only input that should propagate to
+	# handlers is from BCP (which has key_label -1)
+	if event.key_label != -1:
+		get_tree().get_root().set_input_as_handled()
+	else:
+		return
+
 	# Don't support holding down a key
 	if event.is_echo():
 		return
+
 	var keycode = OS.get_keycode_string(event.get_key_label_with_modifiers()).to_upper()
 	#print(keycode)
 	if keycode == "ESCAPE" and self.get_config_value("gmc", "exit_on_esc", false):
@@ -146,7 +181,11 @@ func _unhandled_input(event: InputEvent) -> void:
 				# Only handle events on the press, not the release
 				if not event.is_pressed():
 					return
-				MPF.server.send_event(cfg[1])
+				# If a kwarg dict is provided, include it
+				if cfg.size() > 2:
+					MPF.server.send_event_with_args(cfg[1], cfg[2])
+				else:
+					MPF.server.send_event(cfg[1])
 			"switch":
 				var action
 				var state
@@ -166,4 +205,3 @@ func _unhandled_input(event: InputEvent) -> void:
 				MPF.server.send_switch(cfg[1], state)
 			_:
 				return
-		get_tree().get_root().set_input_as_handled()

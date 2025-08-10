@@ -102,6 +102,13 @@ func _check_config() -> void:
 				if prop == "filter":
 					continue
 				filter.material.set_shader_parameter(prop, MPF.get_config_value("filter", prop))
+			filter_parent.show()
 	# For safety, disable all filters
 	elif filter_parent:
 		filter_parent.hide()
+
+func _input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+		var menu = $RightClickMenu
+		menu.set_position(event.position)
+		menu.popup()
