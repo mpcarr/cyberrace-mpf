@@ -14,6 +14,7 @@ bcp:
 
 modes:
   - base
+  - qualify_race
 
 opp:
    ports: /dev/ttyACM0, /dev/ttyACM1
@@ -99,11 +100,11 @@ switches:
   sw42:
     number: 1-0-42
     tags: sw_nodes
-  s_43:
+  sw43:
     number: 1-0-43
+    tags: sw_left_outlane
   sw44:
     number: 1-0-44
-    tags: sw_left_outlane
   s_45:
     number: 1-0-45
   s_46:
@@ -138,8 +139,9 @@ switches:
   sw58:
     number: 1-0-58
     tags: sw_shortcut
-  s_59:
+  sw59:
     number: 1-0-59
+    tags: sw_left_inlane
   sw60:
     number: 1-0-60
     tags: s_left_outlane
@@ -178,11 +180,10 @@ switches:
   sw74:
     number: 1-0-74
     tags: sw_boost1
-  s_75:
+  sw75:
     number: 1-0-75
   sw76:
     number: 1-0-76
-    tags: sw_right_inlane
   s_77:
     number: 1-0-77
   s_78:
@@ -212,8 +213,9 @@ switches:
     number: 1-0-89
   s_90:
     number: 1-0-90
-  s_91:
+  sw91:
     number: 1-0-91
+    tags: sw_right_inlane
   s_92:
     number: 1-0-92
   s_93:

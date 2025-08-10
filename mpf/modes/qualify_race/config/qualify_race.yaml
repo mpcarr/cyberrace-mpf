@@ -3,7 +3,7 @@
 mode:
   start_events: ball_started
   stop_events: ball_ended
-  priority: 510
+  priority: 1010
 
 shot_profiles: 
   qualify_race:
@@ -19,7 +19,7 @@ shot_profiles:
        speed: 1
        sync_ms: 0
        show_tokens: 
-         color: ff0000
+         color: FFFFFF
   qualify_race_ready:
     states: 
      - name: unlit
@@ -33,45 +33,45 @@ shot_profiles:
        speed: 1
        sync_ms: 0
        show_tokens: 
-         color: ff0000
+         color: FFFFFF
 
 shots: 
   left_outlane:
-    switch: sw01
+    switch: sw43
     show_tokens: 
-      lights: l42
+      lights: race_r
     profile: qualify_race
     control_events: 
       - events: award_super_skillshot
         state: 1
   left_inlane:
-    switch: sw02
+    switch: sw59
     show_tokens: 
-      lights: l43
+      lights: race_a
     profile: qualify_race
     control_events: 
       - events: award_super_skillshot
         state: 1
   right_inlane:
-    switch: sw03
+    switch: sw91
     show_tokens: 
-      lights: l44
+      lights: race_c
     profile: qualify_race
     control_events: 
       - events: award_super_skillshot
         state: 1
   right_outlane:
-    switch: sw04
+    switch: sw68
     show_tokens: 
-      lights: l45
+      lights: race_e
     profile: qualify_race
     control_events: 
       - events: award_super_skillshot
         state: 1
   right_orbit_race_qualify:
     show_tokens: 
-      lights: l63
-      color: ff0000
+      lights: right_orbit
+      color: 00FF00
     disable_events: mode_race_selection_starting
     profile: qualify_race_ready
     reset_events: mode_race_selection_starting
@@ -85,13 +85,6 @@ shot_groups:
     reset_events: mode_race_ended
     rotate_left_events: s_left_flipper_active
     rotate_right_events: s_right_flipper_active
-
-show_player: 
-  qualify_race_on_complete: 
-    race_qualify: 
-      loops: 2
-      speed: 2
-
 
 ball_holds: 
   race_ready:

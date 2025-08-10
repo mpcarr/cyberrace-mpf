@@ -8,5 +8,5 @@ slide_player:
 light_player:
   mode_attract_started: 
    insert: FFFFFF
-   T_GI: FF0000
+   T_GI: FFFFFF
    

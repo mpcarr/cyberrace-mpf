@@ -13,15 +13,22 @@ modes:
 
 hardware:
   platform: virtual
-  rgb_dmd: smartmatrix
+  rgb_dmd: pin2dmd
 
+bcp:
+  connections:
+    local_display:
+      host: localhost #192.168.86.25
+      port: 5050
+  debug: true
 
-smartmatrix:
-  fast_rgb_dmd:
-    port: /dev/tty.usbserial-3100
-    baud: 3000000
+pin2dmd:
+  resolution: 256x64
+  panel: rgb
 
 rgb_dmds:
-  fast_rgb_dmd:
-    hardware_brightness: 0.1
+  default:
+    hardware_brightness: 0.9
     source_display: main
+    fps: 30
+    only_send_changes: true
