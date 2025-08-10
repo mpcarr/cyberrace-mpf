@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://cv4telcgj3028"
+path="res://.godot/imported/sendha24.fnt-dc8b715303f77e098ac23c389eff1333.fontdata"
+
+[deps]
+
+source_file="res://fonts/sendha24.fnt"
+dest_files=["res://.godot/imported/sendha24.fnt-dc8b715303f77e098ac23c389eff1333.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

@@ -533,23 +533,3 @@ lights:
     subtype: led
     type: rgb
     tags: T_GI
-  l130:
-    previous: l129
-    subtype: led
-    type: rgb
-    tags: T_GI
-  l131:
-    previous: l130
-    subtype: led
-    type: rgb
-    tags: T_GI
-  l132:
-    previous: l131
-    subtype: led
-    type: rgb
-    tags: T_GI
-  l133:
-    previous: l132
-    subtype: led
-    type: rgb
-    tags: T_GI

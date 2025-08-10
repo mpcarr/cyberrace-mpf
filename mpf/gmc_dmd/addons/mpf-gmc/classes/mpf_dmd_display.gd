@@ -51,9 +51,7 @@ func _capture() -> void:
 	if not MPF.server._client:
 		return
 	var tex := get_viewport().get_texture().get_image()
-	# Downsize the image to the size of the DMD, no interpolation
-	tex.resize(resolution.x, resolution.y, 0)
-	# If RGB shifting is needed, do it now
+
 	self._rgb_shift_fn and self._rgb_shift_fn.call(tex)
 	var data = tex.get_data()
 	# !!! Due to MPF BCP parsing limitations 'bytes' MUST be the last arg

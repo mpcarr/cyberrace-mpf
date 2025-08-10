@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://xx52by00kae6"
+path="res://.godot/imported/sendha42.fnt-287dff82fa5e8a6d0a1334334f130b4a.fontdata"
+
+[deps]
+
+source_file="res://fonts/sendha42.fnt"
+dest_files=["res://.godot/imported/sendha42.fnt-287dff82fa5e8a6d0a1334334f130b4a.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

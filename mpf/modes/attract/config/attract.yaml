@@ -1,12 +1,21 @@
 #config_version=6
+  
 
 slide_player:
-  mode_attract_started:
-    attract:
-      action: play
-  
-light_player:
+  mode_attract_started: attract
+  timer_attract_overlay_tick{ticks==3}: attract_overlay
+  timer_attract_overlay_complete:
+    attract_overlay:
+      action: remove
+
+timers:
+  attract_overlay:
+    end_value: 6
+    start_running: true
+    restart_on_complete: true
+
+show_player:
   mode_attract_started: 
-   insert: FFFFFF
-   T_GI: FFFFFF
-   
+    sweep_up:
+      speed: 1
+      loops: -1

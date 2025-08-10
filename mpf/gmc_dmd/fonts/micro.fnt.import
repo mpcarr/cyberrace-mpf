@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://nnwkaybu733d"
+path="res://.godot/imported/micro.fnt-cf8cf13399f3c6008fa2f1552ff6a436.fontdata"
+
+[deps]
+
+source_file="res://fonts/micro.fnt"
+dest_files=["res://.godot/imported/micro.fnt-cf8cf13399f3c6008fa2f1552ff6a436.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

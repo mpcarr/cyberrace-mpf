@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ua086w6a13da"
+path="res://.godot/imported/Karl Casey - White Bat I - 01 Elysium.mp3-8daf200cc0892b6bb71ec6b9cdeb6a8b.mp3str"
+
+[deps]
+
+source_file="res://resources/music/cyberrace/Karl Casey - White Bat I - 01 Elysium.mp3"
+dest_files=["res://.godot/imported/Karl Casey - White Bat I - 01 Elysium.mp3-8daf200cc0892b6bb71ec6b9cdeb6a8b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
