@@ -17,3 +17,9 @@ timers:
     end_value: 6
     start_running: true
     restart_on_complete: true
+
+show_player:
+  mode_attract_started: 
+    sweep_up:
+      speed: 1
+      loops: -1

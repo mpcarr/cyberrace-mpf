@@ -1,0 +1,1143 @@
+[gd_scene load_steps=16 format=3 uid="uid://dx41in1wt58dr"]
+
+[ext_resource type="Texture2D" uid="uid://bbs514jryghy2" path="res://monitor/playfield.jpg" id="1_p2gby"]
+[ext_resource type="Script" uid="uid://d1w73p1wpy8sm" path="res://addons/gmc-toolbox/playfield/GMCPlayfield.gd" id="1_ujwwi"]
+[ext_resource type="Texture2D" uid="uid://u5hp0m0sfd0a" path="res://addons/gmc-toolbox/playfield/inserts/circle-insert.svg" id="5_e2jqc"]
+[ext_resource type="Texture2D" uid="uid://d35kgm4p0mjj0" path="res://shapes/gradient_square.png" id="5_is4i2"]
+[ext_resource type="Script" uid="uid://cegi24pljiqqr" path="res://addons/gmc-toolbox/playfield/GMCLight.gd" id="5_v1su3"]
+[ext_resource type="Texture2D" uid="uid://iwgde7k33wxy" path="res://shapes/gradient_circle.png" id="6_1tb8c"]
+
+[sub_resource type="Animation" id="Animation_h05v7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SweepLeft/GradientSquare3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-48.9999, 552)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SweepRight/GradientSquare4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(535, 552)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SweepUp/GradientSquare3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(246, -40)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SweepDown/GradientSquare3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(246, 1116)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RadialOut/GradientCircle:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(229, 537)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RadialOut/GradientCircle:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6.60156, 6.60156)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Spin1Burst/GradientCircle:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(427, 232)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Spin1Burst/GradientCircle:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.925781, 0.966796)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Spin2Burst/GradientCircle:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(399, 204)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Spin2Burst/GradientCircle:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.925781, 0.966796)]
+}
+
+[sub_resource type="Animation" id="Animation_4xp5j"]
+resource_name = "radial_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RadialOut/GradientCircle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(229, 537)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RadialOut/GradientCircle:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.382812, 0.382812), Vector2(6.60156, 6.60156)]
+}
+
+[sub_resource type="Animation" id="Animation_p2gby"]
+resource_name = "spin1_burst"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spin1Burst/GradientCircle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(98.0001, 218)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spin1Burst/GradientCircle:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.925781, 0.966796), Vector2(8.619, 9)]
+}
+
+[sub_resource type="Animation" id="Animation_e2jqc"]
+resource_name = "spin2_burst"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spin2Burst/GradientCircle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(399, 204)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spin2Burst/GradientCircle:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.925781, 0.966796), Vector2(8.618, 9)]
+}
+
+[sub_resource type="Animation" id="Animation_p3fmy"]
+resource_name = "sweep_down"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SweepDown/GradientSquare3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(246, -40), Vector2(246, 1116)]
+}
+
+[sub_resource type="Animation" id="Animation_8ami6"]
+resource_name = "sweep_left"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SweepLeft/GradientSquare3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(616.095, 552), Vector2(-145, 552)]
+}
+
+[sub_resource type="Animation" id="Animation_tch8g"]
+resource_name = "sweep_right"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SweepRight/GradientSquare4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-147.995, 552), Vector2(642, 552)]
+}
+
+[sub_resource type="Animation" id="Animation_o4ewh"]
+resource_name = "sweep_up"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SweepUp/GradientSquare3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(233, 1212), Vector2(246, -112)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_epack"]
+_data = {
+&"RESET": SubResource("Animation_h05v7"),
+&"radial_out": SubResource("Animation_4xp5j"),
+&"spin1_burst": SubResource("Animation_p2gby"),
+&"spin2_burst": SubResource("Animation_e2jqc"),
+&"sweep_down": SubResource("Animation_p3fmy"),
+&"sweep_left": SubResource("Animation_8ami6"),
+&"sweep_right": SubResource("Animation_tch8g"),
+&"sweep_up": SubResource("Animation_o4ewh")
+}
+
+[node name="Playfield" type="TextureRect" node_paths=PackedStringArray("animation_player")]
+offset_right = 476.0
+offset_bottom = 1080.0
+texture = ExtResource("1_p2gby")
+script = ExtResource("1_ujwwi")
+animation_player = NodePath("AnimationPlayer")
+monitor_size = Vector2(475, 1080)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_epack")
+}
+
+[node name="SweepRight" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GradientSquare4" type="Sprite2D" parent="SweepRight"]
+position = Vector2(535, 552)
+rotation = 1.5708
+scale = Vector2(4.29649, 1.03301)
+texture = ExtResource("5_is4i2")
+
+[node name="SweepLeft" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GradientSquare3" type="Sprite2D" parent="SweepLeft"]
+position = Vector2(-48.9999, 552)
+rotation = -1.5708
+scale = Vector2(4.29649, 0.955667)
+texture = ExtResource("5_is4i2")
+
+[node name="SweepDown" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GradientSquare3" type="Sprite2D" parent="SweepDown"]
+position = Vector2(246, 1116)
+rotation = 3.14159
+scale = Vector2(2.58594, 0.186611)
+texture = ExtResource("5_is4i2")
+
+[node name="SweepUp" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GradientSquare3" type="Sprite2D" parent="SweepUp"]
+position = Vector2(246, -40)
+scale = Vector2(2.58594, 0.800337)
+texture = ExtResource("5_is4i2")
+
+[node name="Control" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RadialOut" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GradientCircle" type="Sprite2D" parent="RadialOut"]
+position = Vector2(229, 537)
+scale = Vector2(6.60156, 6.60156)
+texture = ExtResource("6_1tb8c")
+
+[node name="Spin1Burst" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GradientCircle" type="Sprite2D" parent="Spin1Burst"]
+position = Vector2(427, 232)
+scale = Vector2(0.925781, 0.966796)
+texture = ExtResource("6_1tb8c")
+
+[node name="Spin2Burst" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GradientCircle" type="Sprite2D" parent="Spin2Burst"]
+position = Vector2(399, 204)
+scale = Vector2(0.925781, 0.966796)
+texture = ExtResource("6_1tb8c")
+
+[node name="lights" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="l01" type="Sprite2D" parent="lights"]
+position = Vector2(253, 39)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["bonus_lane1", "insert"]
+
+[node name="l02" type="Sprite2D" parent="lights"]
+position = Vector2(299, 47)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["bonus_lane2", "insert"]
+
+[node name="l03" type="Sprite2D" parent="lights"]
+position = Vector2(347, 55)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["bonus_lane3", "insert"]
+
+[node name="l04" type="Sprite2D" parent="lights"]
+position = Vector2(195, 223)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["spinner_top", "insert"]
+
+[node name="l05" type="Sprite2D" parent="lights"]
+position = Vector2(233, 233)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["boost_3", "insert"]
+
+[node name="l06" type="Sprite2D" parent="lights"]
+position = Vector2(234, 268)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["tt_2", "insert"]
+
+[node name="l07" type="Sprite2D" parent="lights"]
+position = Vector2(198, 266)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["bet_b", "insert"]
+
+[node name="l08" type="Sprite2D" parent="lights"]
+position = Vector2(200, 295)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["bet_e", "insert"]
+
+[node name="l09" type="Sprite2D" parent="lights"]
+position = Vector2(199, 324)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["bet_t", "insert"]
+
+[node name="l10" type="Sprite2D" parent="lights"]
+position = Vector2(261, 370)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["perk", "insert"]
+
+[node name="l11" type="Sprite2D" parent="lights"]
+position = Vector2(256, 403)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["extra_ball", "insert"]
+
+[node name="l12" type="Sprite2D" parent="lights"]
+position = Vector2(247, 435)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["tt_3", "insert"]
+
+[node name="l13" type="Sprite2D" parent="lights"]
+position = Vector2(287, 447)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["right_ramp", "insert"]
+
+[node name="l14" type="Sprite2D" parent="lights"]
+position = Vector2(349, 444)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["lock", "insert"]
+
+[node name="l15" type="Sprite2D" parent="lights"]
+position = Vector2(387, 444)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["right_orbit", "insert"]
+
+[node name="l16" type="Sprite2D" parent="lights"]
+position = Vector2(337, 470)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["tt_4", "insert"]
+
+[node name="l17" type="Sprite2D" parent="lights"]
+position = Vector2(377, 476)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["combo_5", "insert"]
+
+[node name="l18" type="Sprite2D" parent="lights"]
+position = Vector2(366, 501)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["cyber_r", "insert"]
+
+[node name="l19" type="Sprite2D" parent="lights"]
+position = Vector2(337, 553)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["shortcut", "insert"]
+
+[node name="l20" type="Sprite2D" parent="lights"]
+position = Vector2(300, 567)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["tt_5", "insert"]
+
+[node name="l21" type="Sprite2D" parent="lights"]
+position = Vector2(364, 613)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["node1", "insert"]
+
+[node name="l22" type="Sprite2D" parent="lights"]
+position = Vector2(344, 616)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["nodes2", "insert"]
+
+[node name="l23" type="Sprite2D" parent="lights"]
+position = Vector2(321, 620)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["node3", "insert"]
+
+[node name="l24" type="Sprite2D" parent="lights"]
+position = Vector2(301, 623)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["node4", "insert"]
+
+[node name="l25" type="Sprite2D" parent="lights"]
+position = Vector2(280, 627)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["node5", "insert"]
+
+[node name="l26" type="Sprite2D" parent="lights"]
+position = Vector2(371, 642)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["node6", "insert"]
+
+[node name="l27" type="Sprite2D" parent="lights"]
+position = Vector2(348, 646)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["node7", "insert"]
+
+[node name="l28" type="Sprite2D" parent="lights"]
+position = Vector2(327, 650)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["node8", "insert"]
+
+[node name="l29" type="Sprite2D" parent="lights"]
+position = Vector2(306, 653)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["node9", "insert"]
+
+[node name="l30" type="Sprite2D" parent="lights"]
+position = Vector2(285, 656)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["node10", "insert"]
+
+[node name="l31" type="Sprite2D" parent="lights"]
+position = Vector2(375, 671)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["node11", "insert"]
+
+[node name="l32" type="Sprite2D" parent="lights"]
+position = Vector2(355, 674)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["node12", "insert"]
+
+[node name="l33" type="Sprite2D" parent="lights"]
+position = Vector2(333, 678)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["node13", "insert"]
+
+[node name="l34" type="Sprite2D" parent="lights"]
+position = Vector2(312, 682)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["node14", "insert"]
+
+[node name="l35" type="Sprite2D" parent="lights"]
+position = Vector2(291, 685)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["node15", "insert"]
+
+[node name="l36" type="Sprite2D" parent="lights"]
+position = Vector2(412, 741)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["race_e", "insert"]
+
+[node name="l37" type="Sprite2D" parent="lights"]
+position = Vector2(369, 742)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["race_c", "insert"]
+
+[node name="l38" type="Sprite2D" parent="lights"]
+position = Vector2(308, 719)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["grandslam_5", "insert"]
+
+[node name="l39" type="Sprite2D" parent="lights"]
+position = Vector2(253, 760)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["bonusX_2", "insert"]
+
+[node name="l40" type="Sprite2D" parent="lights"]
+position = Vector2(298, 760)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["bonusX_4", "insert"]
+
+[node name="l41" type="Sprite2D" parent="lights"]
+position = Vector2(276, 802)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["bonusX_5", "insert"]
+
+[node name="l42" type="Sprite2D" parent="lights"]
+position = Vector2(235, 832)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["race_3", "insert"]
+
+[node name="l43" type="Sprite2D" parent="lights"]
+position = Vector2(253, 863)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["race_6", "insert"]
+
+[node name="l44" type="Sprite2D" parent="lights"]
+position = Vector2(217, 863)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["race_5", "insert"]
+
+[node name="l45" type="Sprite2D" parent="lights"]
+position = Vector2(180, 860)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["race_4", "insert"]
+
+[node name="l46" type="Sprite2D" parent="lights"]
+position = Vector2(201, 828)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["race_2", "insert"]
+
+[node name="l47" type="Sprite2D" parent="lights"]
+position = Vector2(218, 800)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["race_1", "insert"]
+
+[node name="l48" type="Sprite2D" parent="lights"]
+position = Vector2(187, 758)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["playfieldX_5", "insert"]
+
+[node name="l49" type="Sprite2D" parent="lights"]
+position = Vector2(259, 718)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["grandslam_4", "insert"]
+
+[node name="l50" type="Sprite2D" parent="lights"]
+position = Vector2(215, 717)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["grandslam_3", "insert"]
+
+[node name="l51" type="Sprite2D" parent="lights"]
+position = Vector2(171, 718)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["grandslam_2", "insert"]
+
+[node name="l52" type="Sprite2D" parent="lights"]
+position = Vector2(141, 762)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["playfieldX_3", "insert"]
+
+[node name="l53" type="Sprite2D" parent="lights"]
+position = Vector2(159, 799)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["playfieldX_2", "insert"]
+
+[node name="l54" type="Sprite2D" parent="lights"]
+position = Vector2(125, 720)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["grandslam_1", "insert"]
+
+[node name="l55" type="Sprite2D" parent="lights"]
+position = Vector2(26, 738)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["race_r", "insert"]
+
+[node name="l56" type="Sprite2D" parent="lights"]
+position = Vector2(66, 739)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["race_a", "insert"]
+
+[node name="l57" type="Sprite2D" parent="lights"]
+position = Vector2(111, 685)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["cyber_c", "insert"]
+
+[node name="l58" type="Sprite2D" parent="lights"]
+position = Vector2(101, 659)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["combo1", "insert"]
+
+[node name="l59" type="Sprite2D" parent="lights"]
+position = Vector2(39, 673)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["add_time", "insert"]
+
+[node name="l60" type="Sprite2D" parent="lights"]
+position = Vector2(89, 630)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["spinner_bottom", "insert"]
+
+[node name="l61" type="Sprite2D" parent="lights"]
+position = Vector2(114, 609)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["boost_1", "insert"]
+
+[node name="l62" type="Sprite2D" parent="lights"]
+position = Vector2(135, 514)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["hyper_h", "insert"]
+
+[node name="l63" type="Sprite2D" parent="lights"]
+position = Vector2(124, 481)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["tt_1", "insert"]
+
+[node name="l64" type="Sprite2D" parent="lights"]
+position = Vector2(112, 448)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["cyber_y", "insert"]
+
+[node name="l65" type="Sprite2D" parent="lights"]
+position = Vector2(100, 427)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["combo2", "insert"]
+
+[node name="l66" type="Sprite2D" parent="lights"]
+position = Vector2(90, 396)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["left_orbit", "insert"]
+
+[node name="l67" type="Sprite2D" parent="lights"]
+position = Vector2(184, 420)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["left_ramp", "insert"]
+
+[node name="l68" type="Sprite2D" parent="lights"]
+position = Vector2(201, 449)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["combo3", "insert"]
+
+[node name="l69" type="Sprite2D" parent="lights"]
+position = Vector2(216, 469)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["cyber_b", "insert"]
+
+[node name="l70" type="Sprite2D" parent="lights"]
+position = Vector2(275, 482)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["combo4", "insert"]
+
+[node name="l71" type="Sprite2D" parent="lights"]
+position = Vector2(268, 506)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["cyber_e", "insert"]
+
+[node name="l72" type="Sprite2D" parent="lights"]
+position = Vector2(242, 528)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["hyper_r", "insert"]
+
+[node name="l73" type="Sprite2D" parent="lights"]
+position = Vector2(214, 523)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["hyper_e", "insert"]
+
+[node name="l74" type="Sprite2D" parent="lights"]
+position = Vector2(187, 520)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["hyper_p", "insert"]
+
+[node name="l75" type="Sprite2D" parent="lights"]
+position = Vector2(162, 515)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["hyper_y", "insert"]
+
+[node name="l76" type="Sprite2D" parent="lights"]
+position = Vector2(165, 484)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["boost_2", "insert"]
+
+[node name="l100" type="Sprite2D" parent="lights"]
+position = Vector2(329, 355)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l101" type="Sprite2D" parent="lights"]
+position = Vector2(390, 150)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l102" type="Sprite2D" parent="lights"]
+position = Vector2(463, 85)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l103" type="Sprite2D" parent="lights"]
+position = Vector2(321, 90)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l104" type="Sprite2D" parent="lights"]
+position = Vector2(345, 8)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l105" type="Sprite2D" parent="lights"]
+position = Vector2(275, 82)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l106" type="Sprite2D" parent="lights"]
+position = Vector2(236, 78)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l107" type="Sprite2D" parent="lights"]
+position = Vector2(210, 121)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l108" type="Sprite2D" parent="lights"]
+position = Vector2(205, 171)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l109" type="Sprite2D" parent="lights"]
+position = Vector2(39, 63)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l110" type="Sprite2D" parent="lights"]
+position = Vector2(141, 208)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l111" type="Sprite2D" parent="lights"]
+position = Vector2(162, 262)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l112" type="Sprite2D" parent="lights"]
+position = Vector2(167, 287)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l113" type="Sprite2D" parent="lights"]
+position = Vector2(163, 319)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l114" type="Sprite2D" parent="lights"]
+position = Vector2(23, 367)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l115" type="Sprite2D" parent="lights"]
+position = Vector2(131, 421)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l116" type="Sprite2D" parent="lights"]
+position = Vector2(152, 453)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l117" type="Sprite2D" parent="lights"]
+position = Vector2(101, 565)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l118" type="Sprite2D" parent="lights"]
+position = Vector2(10, 643)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l119" type="Sprite2D" parent="lights"]
+position = Vector2(15, 686)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l120" type="Sprite2D" parent="lights"]
+position = Vector2(92, 771)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l121" type="Sprite2D" parent="lights"]
+position = Vector2(109, 826)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l122" type="Sprite2D" parent="lights"]
+position = Vector2(79, 881)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l123" type="Sprite2D" parent="lights"]
+position = Vector2(125, 912)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l124" type="Sprite2D" parent="lights"]
+position = Vector2(282, 913)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l125" type="Sprite2D" parent="lights"]
+position = Vector2(332, 876)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l126" type="Sprite2D" parent="lights"]
+position = Vector2(322, 837)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l127" type="Sprite2D" parent="lights"]
+position = Vector2(336, 774)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l128" type="Sprite2D" parent="lights"]
+position = Vector2(457, 694)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]
+
+[node name="l129" type="Sprite2D" parent="lights"]
+position = Vector2(461, 648)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_e2jqc")
+script = ExtResource("5_v1su3")
+tags = ["T_GI"]

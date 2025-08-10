@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://ymlpclbf7duf" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_r2dpr"]
 [ext_resource type="Texture2D" uid="uid://dyke4e71xl1jn" path="res://Untitled-1.png" id="2_f161n"]
 [ext_resource type="FontFile" uid="uid://cekcn7ed0n777" path="res://fonts/TeenyTinyPixls5.fnt" id="3_cq3lo"]
-[ext_resource type="FontFile" uid="uid://crmkwhw5cmhe2" path="res://fonts/sendha32.fnt" id="4_twbla"]
-[ext_resource type="SpriteFrames" uid="uid://dv4l1ke3hlg1s" path="res://resources/animations/boost/boost_sprite_frames.tres" id="5_cq3lo"]
+[ext_resource type="FontFile" uid="uid://xx52by00kae6" path="res://fonts/sendha42.fnt" id="4_f161n"]
+[ext_resource type="AudioStream" uid="uid://c8ndfmtekvwx7" path="res://resources/music/cyberrace/Karl Casey - White Bat I - 02 Casualty.mp3" id="5_cq3lo"]
 
 [node name="Attract" type="Control"]
 layout_mode = 3
@@ -40,7 +40,7 @@ grow_vertical = 2
 theme_override_constants/separation = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(110, 12)
+custom_minimum_size = Vector2(110, 11)
 layout_mode = 2
 theme_override_constants/separation = 0
 
@@ -82,15 +82,15 @@ theme_override_constants/separation = 0
 [node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(256, 40)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_twbla")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("4_f161n")
+theme_override_font_sizes/font_size = 42
 text = "1,456,657,5555"
 horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(110, 12)
+custom_minimum_size = Vector2(110, 11)
 layout_mode = 2
 theme_override_constants/separation = 0
 
@@ -126,10 +126,29 @@ clip_text = true
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 10, 12, 100, 12, 110, 0)
-width = 0.5
+width = 1.0
 default_color = Color(0, 1, 1, 1)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("5_cq3lo")
-autoplay = "default"
-centered = false
+[node name="Line2D2" type="Line2D" parent="."]
+position = Vector2(146, 0)
+points = PackedVector2Array(0, 0, 10, 12, 100, 12, 110, 0)
+width = 1.0
+default_color = Color(0, 1, 1, 1)
+
+[node name="Line2D3" type="Line2D" parent="."]
+position = Vector2(110, 64)
+rotation = 3.14159
+points = PackedVector2Array(0, 0, 10, 12, 100, 12, 110, 0)
+width = 1.0
+default_color = Color(0, 1, 1, 1)
+
+[node name="Line2D4" type="Line2D" parent="."]
+position = Vector2(256, 64)
+rotation = 3.14159
+points = PackedVector2Array(0, 0, 10, 12, 100, 12, 110, 0)
+width = 1.0
+default_color = Color(0, 1, 1, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_cq3lo")
+autoplay = true
