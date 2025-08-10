@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://dshbl8y3g3bbf"
+path="res://.godot/imported/teeny_tiny_pixls-5.fnt-77d5ec1f82e5e2c887c33c608e39fd95.fontdata"
+
+[deps]
+
+source_file="res://fonts/teeny_tiny_pixls-5.fnt"
+dest_files=["res://.godot/imported/teeny_tiny_pixls-5.fnt-77d5ec1f82e5e2c887c33c608e39fd95.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

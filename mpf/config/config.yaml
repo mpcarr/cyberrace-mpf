@@ -4,11 +4,21 @@ hardware:
   platform: opp
   driverboards: gen2
   segment_displays: light_segment_displays
+  rgb_dmd: pin2dmd
+
+pin2dmd:
+  resolution: 256x64
+  panel: rgb
+
+rgb_dmds:
+  default:
+    hardware_brightness: 0.5
+    source_display: main
 
 bcp:
   connections:
     local_display:
-      host: 172.20.10.9
+      host: localhost
       port: 5050
   debug: true
 

@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://dfhdtq8e1mrri"
+path="res://.godot/imported/pixled12.fnt-2bb43f65f5aa198eedf0c1c04a7e15cd.fontdata"
+
+[deps]
+
+source_file="res://fonts/pixled12.fnt"
+dest_files=["res://.godot/imported/pixled12.fnt-2bb43f65f5aa198eedf0c1c04a7e15cd.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

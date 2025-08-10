@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://crmkwhw5cmhe2"
+path="res://.godot/imported/sendha32.fnt-1ffee4a45eaf7bd8f8ec9e9369fbbf5b.fontdata"
+
+[deps]
+
+source_file="res://fonts/sendha32.fnt"
+dest_files=["res://.godot/imported/sendha32.fnt-1ffee4a45eaf7bd8f8ec9e9369fbbf5b.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2
