@@ -20,15 +20,15 @@ show_player:
     flash_color: 
       key: ball_save
       show_tokens: 
-        lights: l16
-        color: 62FBFF
+        lights: ball_save
+        color: FFFFFF
   ball_save_base_hurry_up: 
     flash_color: 
       key: ball_save
       speed: 2
       show_tokens: 
-        lights: l16
-        color: 62FBFF
+        lights: ball_save
+        color: FFFFFF
   ball_save_base_grace_period: 
     flash_color: 
       action: stop
@@ -38,8 +38,10 @@ show_player:
 light_player: 
   mode_base_started: 
     T_GI: 
-      color: FF0000
+      color: FFFFFF
 
+slide_player:
+  mode_base_started: base
 
 
 

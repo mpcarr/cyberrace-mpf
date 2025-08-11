@@ -502,7 +502,7 @@ lights:
     previous: l122
     subtype: led
     type: rgb
-    tags: T_GI
+    tags: insert, ball_save
   l124:
     previous: l123
     subtype: led

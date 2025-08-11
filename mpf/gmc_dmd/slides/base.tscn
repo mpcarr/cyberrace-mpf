@@ -1,0 +1,190 @@
+[gd_scene load_steps=7 format=3 uid="uid://dpt3348wt3tuq"]
+
+[ext_resource type="Script" uid="uid://cdwas3gbf7w3g" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_6vrr4"]
+[ext_resource type="Texture2D" uid="uid://dyke4e71xl1jn" path="res://Untitled-1.png" id="2_smx5b"]
+[ext_resource type="FontFile" uid="uid://cekcn7ed0n777" path="res://fonts/TeenyTinyPixls5.fnt" id="3_r8cgk"]
+[ext_resource type="Script" uid="uid://bojo76gkx41ow" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="4_20xw8"]
+[ext_resource type="FontFile" uid="uid://xx52by00kae6" path="res://fonts/sendha42.fnt" id="5_du778"]
+[ext_resource type="AudioStream" uid="uid://c8ndfmtekvwx7" path="res://resources/music/cyberrace/Karl Casey - White Bat I - 02 Casualty.mp3" id="6_f5kbb"]
+
+[node name="Attract" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6vrr4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Untitled-1" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_smx5b")
+centered = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(110, 11)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MPFVariable" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(110, 8)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r8cgk")
+theme_override_font_sizes/font_size = 5
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("4_20xw8")
+variable_type = 4
+variable_name = "score"
+comma_separate = true
+metadata/_custom_type_script = "uid://bojo76gkx41ow"
+
+[node name="MPFVariable3" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(36, 8)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r8cgk")
+theme_override_font_sizes/font_size = 5
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("4_20xw8")
+variable_name = "player_num"
+comma_separate = true
+template_string = "Player %s"
+metadata/_custom_type_script = "uid://bojo76gkx41ow"
+
+[node name="MPFVariable2" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(110, 8)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r8cgk")
+theme_override_font_sizes/font_size = 5
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("4_20xw8")
+variable_type = 5
+variable_name = "score"
+comma_separate = true
+metadata/_custom_type_script = "uid://bojo76gkx41ow"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(256, 40)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MPFVariable" type="Label" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(256, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_du778")
+theme_override_font_sizes/font_size = 42
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("4_20xw8")
+variable_name = "score"
+comma_separate = true
+metadata/_custom_type_script = "uid://bojo76gkx41ow"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(110, 11)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MPFVariable" type="Label" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(110, 8)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r8cgk")
+theme_override_font_sizes/font_size = 5
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("4_20xw8")
+variable_type = 6
+variable_name = "score"
+comma_separate = true
+metadata/_custom_type_script = "uid://bojo76gkx41ow"
+
+[node name="MPFVariable3" type="Label" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(36, 8)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r8cgk")
+theme_override_font_sizes/font_size = 5
+text = "Ball 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("4_20xw8")
+variable_name = "ball"
+comma_separate = true
+template_string = "Ball %s"
+metadata/_custom_type_script = "uid://bojo76gkx41ow"
+
+[node name="MPFVariable2" type="Label" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(110, 8)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r8cgk")
+theme_override_font_sizes/font_size = 5
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("4_20xw8")
+variable_type = 7
+variable_name = "score"
+comma_separate = true
+metadata/_custom_type_script = "uid://bojo76gkx41ow"
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 10, 12, 100, 12, 110, 0)
+width = 1.0
+default_color = Color(0, 1, 1, 1)
+
+[node name="Line2D2" type="Line2D" parent="."]
+position = Vector2(146, 0)
+points = PackedVector2Array(0, 0, 10, 12, 100, 12, 110, 0)
+width = 1.0
+default_color = Color(0, 1, 1, 1)
+
+[node name="Line2D3" type="Line2D" parent="."]
+position = Vector2(110, 64)
+rotation = 3.14159
+points = PackedVector2Array(0, 0, 10, 12, 100, 12, 110, 0)
+width = 1.0
+default_color = Color(0, 1, 1, 1)
+
+[node name="Line2D4" type="Line2D" parent="."]
+position = Vector2(256, 64)
+rotation = 3.14159
+points = PackedVector2Array(0, 0, 10, 12, 100, 12, 110, 0)
+width = 1.0
+default_color = Color(0, 1, 1, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_f5kbb")
+autoplay = true
+parameters/looping = true
