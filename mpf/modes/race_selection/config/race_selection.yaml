@@ -3,7 +3,7 @@
 mode:
   start_events: ball_hold_race_ready_full
   stop_events: race_started
-  priority: 520
+  priority: 1030
 
 shot_profiles: 
   race_selection:
@@ -40,7 +40,7 @@ shots:
         state: 2
   rs2_tri:
     show_tokens: 
-      lights: l54
+      lights: race2_selection
     profile: race_selection
     control_events: 
       - events: light_race2_selection
@@ -49,7 +49,7 @@ shots:
         state: 2
   rs3_tri:
     show_tokens: 
-      lights: l55
+      lights: race3_selection
     profile: race_selection
     control_events: 
       - events: light_race3_selection
@@ -58,7 +58,7 @@ shots:
         state: 2
   rs4_tri:
     show_tokens: 
-      lights: l56
+      lights: lrace4_selection56
     profile: race_selection
     control_events: 
       - events: light_race4_selection
@@ -67,7 +67,7 @@ shots:
         state: 2
   rs5_tri:
     show_tokens: 
-      lights: l57
+      lights: race5_selection
     profile: race_selection
     control_events: 
       - events: light_race5_selection
@@ -76,7 +76,7 @@ shots:
         state: 2
   rs6_tri:
     show_tokens: 
-      lights: l58
+      lights: race6_selection
     profile: race_selection
     control_events: 
       - events: light_race6_selection
@@ -103,9 +103,7 @@ event_player:
     - light_race5_selection
   mode_race_selection_started{current_player.player_shot_rs3_tri < 2 && current_player.player_shot_rs1_tri==2 && current_player.player_shot_rs2_tri==2 && current_player.player_shot_rs3_tri==2 && current_player.player_shot_rs4_tri==2 && current_player.player_shot_rs5_tri==2}: 
     - light_race6_selection
-  s_plunger_key_active: 
-    - race_selection_confirmed
-  s_lockbar_key_active: 
+  flippers_select: 
     - race_selection_confirmed
 
 

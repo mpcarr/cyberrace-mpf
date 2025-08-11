@@ -55,3 +55,10 @@ variable_player:
     score: 1000
   s_right_sling_active:
     score: 1000
+
+
+combo_switches:
+  both_flippers:
+    tag_1: left_flipper
+    tag_2: right_flipper
+    events_when_both: flippers_select

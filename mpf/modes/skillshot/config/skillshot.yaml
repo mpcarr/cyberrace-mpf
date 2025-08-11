@@ -3,7 +3,7 @@
 mode:
   start_events: ball_started
   stop_events: end_skillshot, skill_shot_unlit_hit, timer_skillshot_complete
-  priority: 500
+  priority: 1020
 
 shot_profiles: 
   skillshot:
@@ -19,29 +19,29 @@ shot_profiles:
        speed: 4
        sync_ms: 250
        show_tokens: 
-         color: ffff00
+         color: FF0000
      - name: flashing_super
        show: flash_color
        loops: -1
        speed: 2
        sync_ms: 0
        show_tokens: 
-         color: ffff00
+         color: FF0000
 
 shots: 
   lane1:
-    switch: sw05
+    switch: sw65
     show_tokens: 
       lights: l66
     advance_events: mode_skillshot_started
     profile: skillshot
   lane2:
-    switch: sw06
+    switch: sw73
     show_tokens: 
       lights: l67
     profile: skillshot
   lane3:
-    switch: sw07
+    switch: sw74
     show_tokens: 
       lights: l68
     profile: skillshot
