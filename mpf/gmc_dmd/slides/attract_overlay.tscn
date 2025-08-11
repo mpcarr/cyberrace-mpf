@@ -1,8 +1,24 @@
 [gd_scene load_steps=7 format=3 uid="uid://dudxgydmtufst"]
 
-[ext_resource type="Script" uid="uid://ymlpclbf7duf" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_8i3yd"]
+[ext_resource type="Script" uid="uid://cdwas3gbf7w3g" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_8i3yd"]
 [ext_resource type="Texture2D" uid="uid://bf8lyu3ybm2p7" path="res://boost.png" id="2_b83oq"]
 [ext_resource type="FontFile" uid="uid://xx52by00kae6" path="res://fonts/sendha42.fnt" id="3_b83oq"]
+
+[sub_resource type="Animation" id="Animation_qv1dn"]
+length = 0.001
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_b83oq"]
 resource_name = "flash"
@@ -19,22 +35,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_qv1dn"]
-length = 0.001
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1l4ln"]

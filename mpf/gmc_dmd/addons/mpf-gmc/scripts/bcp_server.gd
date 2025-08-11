@@ -75,9 +75,14 @@ func _process(_delta: float) -> void:
 ## Handle connection validation before public on_connect method
 func _on_connect(payload: Dictionary) -> void:
 	if payload.controller_name == "Mission Pinball Framework":
-		if not MPF.validate_min_version(payload.controller_version):
-			self.log.error("MPF %s does not meet minimum version requirement %s", [payload.controller_version, MPF.MPF_MIN_VERSION])
+		if not MPF.validate_min_version(payload.controller_version, MPF.MPF_MIN_VERSION):
+			self.log.error("MPF %s does not meet GMC's minimum version requirement %s", [payload.controller_version, MPF.MPF_MIN_VERSION])
+			self.stop(true)
 			assert(false, "GMC requires MPF version %s, but found %s." % [MPF.MPF_MIN_VERSION, payload.controller_version])
+		if not MPF.validate_min_version(MPF.version, payload.gmc_version):
+			self.log.error("GMC %s does not meet MPF's minimum version requirement %s", [MPF.version, payload.gmc_version])
+			self.stop(true)
+			assert(false, "MPF requires GMC version %s, but found %s." % [payload.gmc_version, MPF.version])
 	self.on_connect()
 
 ###
@@ -137,6 +142,8 @@ func send_event(event_name: String, bounceback: bool = true) -> void:
 func send_event_with_args(event_name: String, args: Dictionary, bounceback: bool = true) -> void:
 	if not args or args.is_empty():
 		return self.send_event(event_name)
+	if args.has("name") and args['name'] != event_name:
+		self.log.warning("'name' is a reserved key in send_event_with_args(). Arg value '%s' for event '%s' will be discarded.", [args['name'], event_name])
 	var event_string = _bcp_parse.encode_event_args(event_name, args)
 	_send("trigger?%s" % event_string)
 	if bounceback:
@@ -145,6 +152,15 @@ func send_event_with_args(event_name: String, args: Dictionary, bounceback: bool
 func send_switch(switch_name: String, state: int = -1) -> void:
 	var message = "switch?name=%s&state=%s" % [switch_name, state]
 	_send(message)
+
+func send_bytes(trigger_name: String, data: PackedByteArray, kwargs: Dictionary = {}) -> void:
+	var params = []
+	for k in kwargs.keys():
+		params.append("%s=%s" % [k, kwargs[k]])
+	# !!! Due to MPF BCP parsing limitations 'bytes' MUST be the last arg
+	params.append("bytes=%d" % data.size())
+	self._send("%s?%s" % [trigger_name, "&".join(params)])
+	self._client.put_data(data)
 
 ## Send a specialized Service Mode command to MPF
 func send_service(subcommand: String, values: PackedStringArray = []) -> void:
@@ -280,10 +296,10 @@ func _thread_poll(_userdata=null) -> void:
 			call_deferred("stop")
 			return
 
-		var cstat = _client.get_status()
-		if cstat != StreamPeerTCP.Status.STATUS_CONNECTED:
+		if not _client or _client.get_status() != StreamPeerTCP.Status.STATUS_CONNECTED:
 			self.log.info("BCP client disconnected.")
 			_mutex.unlock()
+
 			call_deferred("stop")
 			return
 
@@ -331,13 +347,13 @@ func _thread_poll(_userdata=null) -> void:
 					_send("hello")
 					call_deferred("_on_connect", message)
 				"item_highlighted":
-					call_deferred("emit_signal", "item_highlighted", message)
+					item_highlighted.emit.call_deferred(message)
 				"list_coils":
-					call_deferred("emit_signal", "service", message)
+					service.emit.call_deferred(message)
 				"list_lights":
-					call_deferred("emit_signal", "service", message)
+					service.emit.call_deferred(message)
 				"list_switches":
-					call_deferred("emit_signal", "service", message)
+					service.emit.call_deferred(message)
 				"machine_variable":
 					call_deferred("deferred_game", "update_machine", message)
 				"mode_list":
@@ -371,7 +387,7 @@ func _thread_poll(_userdata=null) -> void:
 					for e in self.registered_events + self.auto_signals:
 						_send("register_trigger?event=%s" % e)
 				"service":
-					call_deferred("emit_signal", "service", message)
+					service.emit.call_deferred(message)
 				"service_mode_entered":
 					# The default service.yaml includes a slide_player for service slide
 					pass
@@ -385,15 +401,15 @@ func _thread_poll(_userdata=null) -> void:
 					# TBD: Need to distinguish slides/widgets/sounds?
 					# Don't think so, all config_players have the same callback
 					# so all three will post at the same time.
-					call_deferred("emit_signal", "clear", message.context)
+					clear.emit.call_deferred(message.context)
 				"sounds_clear":
 					pass
 				"sounds_play":
 					call_deferred("deferred_mc", "play", message)
 				"text_input":
-					call_deferred("emit_signal", "text_input", message)
+					text_input.emit.call_deferred(message)
 				"timer":
-					call_deferred("emit_signal", "mpf_timer", message)
+					mpf_timer.emit.call_deferred(message)
 				"widgets_play":
 					call_deferred("deferred_mc", "play", message)
 				_:
