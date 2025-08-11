@@ -7,7 +7,7 @@ mode:
 
 ball_saves: 
   base:
-    active_time: 15s
+    active_time: 10s
     grace_period: 3s
     hurry_up_time: 5s
     enable_events: mode_base_started
@@ -25,7 +25,7 @@ show_player:
   ball_save_base_hurry_up: 
     flash_color: 
       key: ball_save
-      speed: 2
+      speed: 4
       show_tokens: 
         lights: ball_save
         color: FFFFFF
@@ -44,4 +44,14 @@ slide_player:
   mode_base_started: base
 
 
-
+variable_player:
+  s_bumper_1_active:
+    score: 1000
+  s_bumper_2_active:
+    score: 1000
+  s_bumper_3_active:
+    score: 1000
+  s_left_sling_active:
+    score: 1000
+  s_right_sling_active:
+    score: 1000
