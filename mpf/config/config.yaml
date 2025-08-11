@@ -129,7 +129,7 @@ switches:
   sw50:
     number: 1-0-50
     tags: sw_add_time
-  s_51:
+  sw51:
     number: 1-0-51
     tags: sw_plunger
   sw52:
@@ -358,7 +358,7 @@ ball_devices:
     eject_targets: plunger
     debug: true
   plunger:
-    ball_switches: sw52
+    ball_switches: sw51
     eject_coil: c_plunger
     player_controlled_eject_event: s_launch_button_active
     eject_targets: playfield
