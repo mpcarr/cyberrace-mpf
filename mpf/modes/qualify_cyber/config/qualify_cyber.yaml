@@ -2,32 +2,32 @@
 
 mode:
   start_events: ball_started, cyber_letters_multi_hit
-  stop_events: ball_ended, cyber_letter_on_complete
+  stop_events: ball_ended, cyber_letters_on_complete
   priority: 1200
 
 shots:
   c_shot:
-    switch: s_bottom_spinner
+    switch: sw98
     profile: cyber_letter
     show_tokens: 
       lights: cyber_c
   y_shot:
-    switch: s_left_orbit
+    switch: sw41
     profile: cyber_letter
     show_tokens: 
       lights: cyber_y
   b_shot:
-    switch: s_left_ramp
+    switch: sw85
     profile: cyber_letter
     show_tokens: 
       lights: cyber_b
   e_shot:
-    switch: s_right_ramp
+    switch: sw86
     profile: cyber_letter
     show_tokens: 
       lights: cyber_e
   r_shot:
-    switch: s_right_orbit
+    switch: sw81
     profile: cyber_letter
     show_tokens: 
       lights: cyber_r

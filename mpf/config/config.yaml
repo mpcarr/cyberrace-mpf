@@ -29,6 +29,7 @@ modes:
   - qualify_boost
   - boost
   - skillshot
+  - qualify_cyber
 
 opp:
    ports: /dev/ttyACM0, /dev/ttyACM1
@@ -221,9 +222,9 @@ switches:
     number: 1-0-83
   s_84:
     number: 1-0-84
-  s_85:
+  sw85:
     number: 1-0-85
-  s_86:
+  sw86:
     number: 1-0-86
   s_87:
     number: 1-0-87
@@ -254,6 +255,7 @@ switches:
   sw98:
     number: 1-0-2
     type: NC
+    tags: s_bottom_spinner
   sw99:
     number: 1-0-1
     type: NC

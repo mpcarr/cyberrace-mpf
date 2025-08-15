@@ -46,7 +46,7 @@ shots:
       lights: bonus_lane3
     profile: skillshot
   skill_leftramp:
-    switch: sw93
+    switch: sw85
     show_tokens: 
       lights: left_ramp
     profile: skillshot
@@ -61,7 +61,7 @@ shot_groups:
     rotate_right_events: s_right_flipper_active
 
 event_player: 
-  leftramp_skillshot_flashing_super_hit: 
+  skill_leftramp_flashing_super_hit: 
     - award_super_skillshot
     - end_skillshot
   skill_shot_flashing_hit: 
