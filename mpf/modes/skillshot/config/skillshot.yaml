@@ -19,36 +19,36 @@ shot_profiles:
        speed: 4
        sync_ms: 250
        show_tokens: 
-         color: FF0000
+         color: FFFFFF
      - name: flashing_super
        show: flash_color
        loops: -1
        speed: 2
        sync_ms: 0
        show_tokens: 
-         color: FF0000
+         color: FFFF00
 
 shots: 
-  lane1:
+  skill_lane1:
     switch: sw65
     show_tokens: 
-      lights: l66
+      lights: bonus_lane1
     advance_events: mode_skillshot_started
     profile: skillshot
-  lane2:
+  skill_lane2:
     switch: sw73
     show_tokens: 
-      lights: l67
+      lights: bonus_lane2
     profile: skillshot
-  lane3:
-    switch: sw74
+  skill_lane3:
+    switch: sw48
     show_tokens: 
-      lights: l68
+      lights: bonus_lane3
     profile: skillshot
-  leftramp:
-    switch: sw13
+  skill_leftramp:
+    switch: sw93
     show_tokens: 
-      lights: l47
+      lights: left_ramp
     profile: skillshot
     control_events: 
       - events: mode_skillshot_started
@@ -56,7 +56,7 @@ shots:
 
 shot_groups: 
   skill_shot:
-    shots: lane1,lane2,lane3
+    shots: skill_lane1,skill_lane2,skill_lane3
     rotate_left_events: s_left_flipper_active
     rotate_right_events: s_right_flipper_active
 
@@ -68,5 +68,8 @@ event_player:
     - award_skillshot
     - end_skillshot
 
-
-
+variable_player:
+  award_skillshot:
+    score: 100000
+  award_super_skillshot:
+    score: 250000
