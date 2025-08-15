@@ -34,6 +34,7 @@ show_player:
       action: stop
       key: ball_save
 
+
 light_player: 
   mode_base_started: 
     T_GI: 
@@ -41,6 +42,7 @@ light_player:
 
 slide_player:
   mode_base_started: base
+
 
 variable_player:
   s_bumper_1_active:
@@ -54,8 +56,9 @@ variable_player:
   s_right_sling_active:
     score: 1000
 
+
 combo_switches:
-  flippers_select:
+  both_flippers:
     tag_1: left_flipper
     tag_2: right_flipper
     events_when_both: flippers_select

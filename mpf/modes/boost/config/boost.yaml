@@ -1,0 +1,67 @@
+#config_version=6
+
+mode:
+  start_events: qualify_boost_on_complete
+  stop_events: ball_ended, timer_boost_mode_complete
+  priority: 1110
+
+shot_profiles: 
+  boost_roving:
+    states: 
+     - name: flashing
+       show: flash_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         color: FFFFFF
+     - name: lit
+       show: on
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         color: FFFFFF
+
+shots: 
+  boost1:
+    switch: sw74
+    show_tokens: 
+      lights: boost_1
+    profile: boost_roving
+  boost2:
+    switch: sw66
+    show_tokens: 
+      lights: boost_2
+    profile: boost_roving
+  boost3:
+    switch: sw57
+    show_tokens: 
+      lights: boost_3
+    profile: boost_roving
+
+shot_groups:
+  roving_group:
+    shots: boost1, boost2, boost3
+    rotate_events: timer_roving_timer_tick
+
+timers:
+  boost_roving_timer:
+    start_running: true
+    tick_interval: 3s
+    restart_on_complete: yes
+    control_events:
+      - event: mode_boost_started
+        action: restart
+      - event: mode_boost_stopped
+        action: stop
+  boost_mode:
+    start_running: true
+    tick_interval: 1s
+    end_value: 60
+
+variable_player:
+  roving_group_hit:
+    score: 50000
+
+

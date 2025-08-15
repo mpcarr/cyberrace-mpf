@@ -1,0 +1,36 @@
+#config_version=6
+
+mode:
+  start_events: ball_started
+  stop_events: ball_ended
+  priority: 1300
+
+shot_profiles: 
+  qualify_multiball:
+    states: 
+     - name: flash_color
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         color: FFFFFF
+     - name: on
+       show: led_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         color: FFFFFF
+
+shots: 
+  light_lock:
+    switch: sw64
+    show_tokens: 
+      lights: lock
+    profile: qualify_multiball
+
+variable_player:
+  light_lock_hit:
+    score: 50000
+    lock_hits: 1

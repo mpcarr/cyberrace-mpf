@@ -1,0 +1,73 @@
+#config_version=6
+
+mode:
+  start_events: ball_started, cyber_letters_multi_hit
+  stop_events: ball_ended, cyber_letter_on_complete
+  priority: 1200
+
+shots:
+  c_shot:
+    switch: s_bottom_spinner
+    profile: cyber_letter
+    show_tokens: 
+      lights: cyber_c
+  y_shot:
+    switch: s_left_orbit
+    profile: cyber_letter
+    show_tokens: 
+      lights: cyber_y
+  b_shot:
+    switch: s_left_ramp
+    profile: cyber_letter
+    show_tokens: 
+      lights: cyber_b
+  e_shot:
+    switch: s_right_ramp
+    profile: cyber_letter
+    show_tokens: 
+      lights: cyber_e
+  r_shot:
+    switch: s_right_orbit
+    profile: cyber_letter
+    show_tokens: 
+      lights: cyber_r
+
+# ----- SHOT PROFILE (unlit -> lit on first hit) -----
+shot_profiles:
+  cyber_letter:
+    states:
+      - name: unlit
+        show: off
+        loops: -1
+        speed: 1
+        sync_ms: 0
+      - name: on
+        show: led_color
+        loops: -1
+        speed: 1
+        sync_ms: 0
+        show_tokens: 
+          color: FFFFFF
+
+# Group for completion detection + reset on mode start
+shot_groups:
+  cyber_letters:
+    shots: c_shot, y_shot, b_shot, e_shot, r_shot
+    reset_events: mode_cyber_started
+
+# ----- SCORING & LOGIC -----
+variable_player:
+  cyber_letters_hit:
+    score: 50000
+  cyber_letters_on_complete:
+    score: 100000
+  c_shot_hit:
+    score: 25000 * current_player.cyber_c_value
+  y_shot_hit:
+    score: 25000 * current_player.cyber_y_value
+  b_shot_hit:
+    score: 25000 * current_player.cyber_b_value
+  e_shot_hit:
+    score: 25000 * current_player.cyber_e_value
+  r_shot_hit:
+    score: 25000 * current_player.cyber_r_value
