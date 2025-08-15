@@ -1,0 +1,51 @@
+#config_version=6
+
+mode:
+  start_events: combo_qualify_hit
+  stop_events: cyber_letters_on_complete
+  priority: 1300
+
+shots:
+  combo_bottom_spinner:
+    switch: s_bottom_spinner
+    profile: combo
+    show_tokens: 
+      lights: combo_1
+  combo_left_orbit:
+    switch: s_left_orbit
+    profile: combo
+    show_tokens: 
+      lights: combo_2
+  combo_left_ramp:
+    switch: s_left_ramp
+    profile: combo
+    show_tokens: 
+      lights: combo_3
+  combo_right_ramp:
+    switch: s_right_ramp
+    profile: combo
+    show_tokens: 
+      lights: combo_4
+  combo_right_orbit:
+    switch: s_right_orbit
+    profile: combo
+    show_tokens: 
+      lights: combo_5
+
+# ----- SHOT PROFILE (unlit -> lit on first hit) -----
+shot_profiles:
+  combo:
+    states:
+      - name: flashing
+        show: flash_color
+        loops: -1
+        speed: 4
+        sync_ms: 0
+        show_tokens: 
+         color: 00FFFF
+
+# Group for completion detection + reset on mode start
+shot_groups:
+  combo:
+    shots: combo_bottom_spinner, combo_left_orbit, combo_left_ramp, combo_right_ramp, combo_right_orbit
+    reset_events: mode_combo_started

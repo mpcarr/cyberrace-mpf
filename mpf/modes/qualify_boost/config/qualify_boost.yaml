@@ -1,0 +1,51 @@
+#config_version=6
+
+mode:
+  start_events: ball_started, mode_boost_stopped
+  stop_events: ball_ended, qualify_boost_targets_on_complete
+  priority: 1100
+
+shot_profiles: 
+  qualify_boost:
+    states: 
+     - name: flashing
+       show: flash_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         color: FFFFFF
+     - name: on
+       show: led_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         color: FFFFFF
+
+shots: 
+  q_boost1:
+    switch: sw74
+    show_tokens: 
+      lights: boost_1
+    profile: qualify_boost
+  q_boost2:
+    switch: sw66
+    show_tokens: 
+      lights: boost_2
+    profile: qualify_boost
+  q_boost3:
+    switch: sw57
+    show_tokens: 
+      lights: boost_3
+    profile: qualify_boost
+
+shot_groups:
+  qualify_boost_targets:
+    shots: q_boost1, q_boost2, q_boost3
+    reset_events: mode_qualify_boost_started
+
+variable_player:
+  qualify_boost_targets_hit:
+    score: 10000
+

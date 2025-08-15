@@ -1,0 +1,10 @@
+#config_version=6
+
+mode:
+  start_events: ball_ending
+  stop_events: bonus_finished
+  use_wait_queue: true
+  priority: 500
+
+event_player:
+  mode_base_started: bonus_finished

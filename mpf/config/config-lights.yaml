@@ -66,7 +66,7 @@ lights:
     previous: l12
     subtype: led
     type: grb
-    tags: right_ramp, insert
+    tags: right_ramp, insert, race1_selection
   l14:
     previous: l13
     subtype: led
@@ -211,32 +211,32 @@ lights:
     previous: l41
     subtype: led
     type: grb
-    tags: race_3, insert
+    tags: race_3, insert, race3_selection
   l43:
     previous: l42
     subtype: led
     type: grb
-    tags: race_6, insert    
+    tags: race_6, insert, race6_selection
   l44:
     previous: l43
     subtype: led
     type: grb
-    tags: race_5, insert
+    tags: race_5, insert, race5_selection
   l45:
     previous: l44
     subtype: led
     type: grb
-    tags: race_4, insert
+    tags: race_4, insert, race4_selection
   l46:
     previous: l45
     subtype: led
     type: grb
-    tags: race_2, insert
+    tags: race_2, insert, race1_selection
   l47:
     previous: l46
     subtype: led
     type: grb
-    tags: race_1, insert
+    tags: race_1, insert, race1_selection
   l48:
     previous: l47
     subtype: led
@@ -336,7 +336,7 @@ lights:
     previous: l66
     subtype: led
     type: grb
-    tags: left_ramp, insert
+    tags: left_ramp, insert, race1_selection
   l68:
     previous: l67
     subtype: led
