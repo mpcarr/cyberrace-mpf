@@ -1,25 +1,31 @@
 #config_version=6
 
 mode:
-  start_events: qualify_boost_on_complete
+  start_events: qualify_boost_targets_on_complete
   stop_events: ball_ended, timer_boost_mode_complete
   priority: 1110
 
 shot_profiles: 
   boost_roving:
+    advance_on_hit: false
     states: 
-     - name: flashing
-       show: flash_color
+     - name: unlit
+       show: off
        loops: -1
        speed: 1
        sync_ms: 0
+     - name: flashing
+       show: flash_color
+       loops: -1
+       speed: 4
+       sync_ms: 250
        show_tokens: 
          color: FFFFFF
      - name: lit
        show: on
        loops: -1
-       speed: 1
        sync_ms: 0
+       priority: 1
        show_tokens: 
          color: FFFFFF
 
@@ -29,26 +35,50 @@ shots:
     show_tokens: 
       lights: boost_1
     profile: boost_roving
+    advance_events: mode_boost_started
+    control_events: 
+      - events: boost_roving_move3
+        state: 1
+      - events: boost_roving_move2, boost_roving_move1
+        state: 0
+      - events: boost1_flashing_hit
+        state: 2
   boost2:
     switch: sw66
     show_tokens: 
       lights: boost_2
     profile: boost_roving
+    control_events: 
+      - events: boost_roving_move1
+        state: 1
+      - events: boost_roving_move2, boost_roving_move3
+        state: 0
+      - events: boost2_flashing_hit
+        state: 2
   boost3:
     switch: sw57
     show_tokens: 
       lights: boost_3
     profile: boost_roving
+    control_events: 
+      - events: boost_roving_move2
+        state: 1
+      - events: boost_roving_move1, boost_roving_move3
+        state: 0
+      - events: boost3_flashing_hit
+        state: 2
 
-shot_groups:
-  roving_group:
-    shots: boost1, boost2, boost3
-    rotate_events: timer_roving_timer_tick
+event_player:
+  timer_boost_roving_tick:
+    - boost_roving_move1{device.timers.boost_roving.ticks == 3}
+    - boost_roving_move2{device.timers.boost_roving.ticks == 6}
+    - boost_roving_move3{device.timers.boost_roving.ticks == 9}
 
 timers:
-  boost_roving_timer:
+  boost_roving:
     start_running: true
-    tick_interval: 3s
+    tick_interval: 1s
+    end_value: 10
     restart_on_complete: yes
     control_events:
       - event: mode_boost_started

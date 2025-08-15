@@ -23,7 +23,7 @@ shot_profiles:
      - name: flashing_super
        show: flash_color
        loops: -1
-       speed: 2
+       speed: 4
        sync_ms: 0
        show_tokens: 
          color: FFFF00

@@ -370,6 +370,7 @@ ball_devices:
   plunger:
     ball_switches: sw51
     eject_coil: c_plunger
+    mechanical_eject: true
     eject_targets: playfield
     eject_timeouts: 3s
     debug: true
