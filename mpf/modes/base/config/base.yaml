@@ -19,16 +19,17 @@ show_player:
   ball_save_base_timer_start: 
     flash_color: 
       key: ball_save
+      speed: 2
       show_tokens: 
         lights: ball_save
-        color: FFFFFF
+        color: CC33FF
   ball_save_base_hurry_up: 
     flash_color: 
       key: ball_save
       speed: 4
       show_tokens: 
         lights: ball_save
-        color: FFFFFF
+        color: CC33FF
   ball_save_base_grace_period: 
     flash_color: 
       action: stop

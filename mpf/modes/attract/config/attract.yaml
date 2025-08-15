@@ -4,8 +4,12 @@
 slide_player:
   mode_attract_started: attract
 
-show_player:
+#show_player:
+#  mode_attract_started: 
+#    sweep_up:
+#      speed: 1
+#      loops: -1
+
+light_player:
   mode_attract_started: 
-    sweep_up:
-      speed: 1
-      loops: -1
+    insert: FFFFFF

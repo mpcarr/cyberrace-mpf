@@ -61,7 +61,7 @@ shots:
       - events: award_super_skillshot
         state: 1
   right_outlane:
-    switch: sw68
+    switch: sw75
     show_tokens: 
       lights: race_e
     profile: qualify_race
