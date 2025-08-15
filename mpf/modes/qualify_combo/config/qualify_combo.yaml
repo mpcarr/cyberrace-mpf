@@ -1,0 +1,55 @@
+#config_version=6
+
+mode:
+  start_events: ball_started
+  stop_events: ball_ended
+  priority: 1300
+
+shots:
+  combo_q_bottom_spinner:
+    switch: s_bottom_spinner
+    profile: combo_qualify
+    show_tokens: 
+      lights: combo_1
+  combo_q_left_orbit:
+    switch: s_left_orbit
+    profile: combo_qualify
+    show_tokens: 
+      lights: combo_2
+  combo_q_left_ramp:
+    switch: s_left_ramp
+    profile: combo_qualify
+    show_tokens: 
+      lights: combo_3
+  combo_q_right_ramp:
+    switch: s_right_ramp
+    profile: combo_qualify
+    show_tokens: 
+      lights: combo_4
+  combo_q_right_orbit:
+    switch: s_right_orbit
+    profile: combo_qualify
+    show_tokens: 
+      lights: combo_5
+
+# ----- SHOT PROFILE (unlit -> lit on first hit) -----
+shot_profiles:
+  combo_qualify:
+    states:
+      - name: unlit
+        show: off
+        loops: -1
+        sync_ms: 0
+      - name: lit
+        show: on
+        loops: -1
+        priority: 1
+        sync_ms: 0
+        show_tokens: 
+         color: 00FFFF
+
+# Group for completion detection + reset on mode start
+shot_groups:
+  combo_qualify:
+    shots: combo_q_bottom_spinner, combo_q_left_orbit, combo_q_left_ramp, combo_q_right_ramp, combo_q_right_orbit
+    reset_events: mode_qualify_combo_started

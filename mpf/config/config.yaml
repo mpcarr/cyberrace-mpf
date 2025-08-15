@@ -24,6 +24,7 @@ bcp:
 
 modes:
   - base
+  - bonus_eob
   - qualify_race
   - qualify_boost
   - boost

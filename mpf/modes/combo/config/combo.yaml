@@ -1,64 +1,51 @@
 #config_version=6
 
 mode:
-  start_events: ball_started
-  stop_events: ball_ended
-  priority: 1000
+  start_events: combo_qualify_hit
+  stop_events: cyber_letters_on_complete
+  priority: 1300
 
-ball_saves: 
-  base:
-    active_time: 10s
-    grace_period: 3s
-    hurry_up_time: 5s
-    enable_events: mode_base_started
-    timer_start_events: balldevice_plunger_ball_eject_success
-    auto_launch: true
-    balls_to_save: -1
+shots:
+  combo_bottom_spinner:
+    switch: s_bottom_spinner
+    profile: combo
+    show_tokens: 
+      lights: combo_1
+  combo_left_orbit:
+    switch: s_left_orbit
+    profile: combo
+    show_tokens: 
+      lights: combo_2
+  combo_left_ramp:
+    switch: s_left_ramp
+    profile: combo
+    show_tokens: 
+      lights: combo_3
+  combo_right_ramp:
+    switch: s_right_ramp
+    profile: combo
+    show_tokens: 
+      lights: combo_4
+  combo_right_orbit:
+    switch: s_right_orbit
+    profile: combo
+    show_tokens: 
+      lights: combo_5
 
-show_player: 
-  ball_save_base_timer_start: 
-    flash_color: 
-      key: ball_save
-      show_tokens: 
-        lights: ball_save
-        color: FFFFFF
-  ball_save_base_hurry_up: 
-    flash_color: 
-      key: ball_save
-      speed: 4
-      show_tokens: 
-        lights: ball_save
-        color: FFFFFF
-  ball_save_base_grace_period: 
-    flash_color: 
-      action: stop
-      key: ball_save
+# ----- SHOT PROFILE (unlit -> lit on first hit) -----
+shot_profiles:
+  combo:
+    states:
+      - name: flashing
+        show: flash_color
+        loops: -1
+        speed: 4
+        sync_ms: 0
+        show_tokens: 
+         color: 00FFFF
 
-
-light_player: 
-  mode_base_started: 
-    T_GI: 
-      color: FFFFFF
-
-slide_player:
-  mode_base_started: base
-
-
-variable_player:
-  s_bumper_1_active:
-    score: 1000
-  s_bumper_2_active:
-    score: 1000
-  s_bumper_3_active:
-    score: 1000
-  s_left_sling_active:
-    score: 1000
-  s_right_sling_active:
-    score: 1000
-
-
-combo_switches:
-  both_flippers:
-    tag_1: left_flipper
-    tag_2: right_flipper
-    events_when_both: flippers_select
+# Group for completion detection + reset on mode start
+shot_groups:
+  combo:
+    shots: combo_bottom_spinner, combo_left_orbit, combo_left_ramp, combo_right_ramp, combo_right_orbit
+    reset_events: mode_combo_started

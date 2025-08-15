@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dx41in1wt58dr"]
+[gd_scene load_steps=19 format=3 uid="uid://dx41in1wt58dr"]
 
 [ext_resource type="Texture2D" uid="uid://bbs514jryghy2" path="res://monitor/playfield.jpg" id="1_p2gby"]
 [ext_resource type="Script" uid="uid://d1w73p1wpy8sm" path="res://addons/gmc-toolbox/playfield/GMCPlayfield.gd" id="1_ujwwi"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://d35kgm4p0mjj0" path="res://shapes/gradient_square.png" id="5_is4i2"]
 [ext_resource type="Script" uid="uid://cegi24pljiqqr" path="res://addons/gmc-toolbox/playfield/GMCLight.gd" id="5_v1su3"]
 [ext_resource type="Texture2D" uid="uid://iwgde7k33wxy" path="res://shapes/gradient_circle.png" id="6_1tb8c"]
+[ext_resource type="Script" uid="uid://cov5635sa0dj5" path="res://addons/gmc-toolbox/playfield/GMCSwitch.gd" id="7_e2jqc"]
+[ext_resource type="Texture2D" uid="uid://dnyvyrnbf1qpv" path="res://addons/gmc-toolbox/playfield/icons/switch-inactive.svg" id="7_ln7ea"]
+[ext_resource type="Texture2D" uid="uid://dty6coaegtiyf" path="res://addons/gmc-toolbox/playfield/icons/switch-active.svg" id="8_svoss"]
 
 [sub_resource type="Animation" id="Animation_h05v7"]
 length = 0.001
@@ -1141,3 +1144,986 @@ scale = Vector2(0.08, 0.08)
 texture = ExtResource("5_e2jqc")
 script = ExtResource("5_v1su3")
 tags = ["T_GI"]
+
+[node name="switches" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="s_left_flipper" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["left_flipper"]
+
+[node name="s_right_flipper" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["right_flipper"]
+
+[node name="s_trough1" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_trough_jam" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_launch_button" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_bumper_1" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_bumper_2" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_bumper_3" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_start" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 976.0
+offset_right = 549.0
+offset_bottom = 1124.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["start"]
+
+[node name="s_left_sling" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_right_sling" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="sw32" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["s_trough2"]
+
+[node name="sw33" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["s_trough3"]
+
+[node name="sw34" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["s_trough4"]
+
+[node name="sw35" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["s_trough5"]
+
+[node name="sw36" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["s_trough6"]
+
+[node name="s_37" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_38" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_39" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="sw40" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_bet1"]
+
+[node name="sw41" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_left_orbit"]
+
+[node name="sw42" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_nodes"]
+
+[node name="sw43" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_left_outlane"]
+
+[node name="sw44" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_45" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_46" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_47" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="sw48" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_top_lane3"]
+
+[node name="sw49" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="sw50" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_add_time"]
+
+[node name="sw51" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_plunger"]
+
+[node name="sw52" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_53" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_54" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_55" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="sw56" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_race_scoop"]
+
+[node name="sw57" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_boost3"]
+
+[node name="sw58" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_shortcut"]
+
+[node name="sw59" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_left_inlane"]
+
+[node name="sw60" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["s_left_outlane"]
+
+[node name="s_61" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_62" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_63" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="sw64" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_captive_lock"]
+
+[node name="sw65" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_bonus_lane1"]
+
+[node name="sw66" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_boost2"]
+
+[node name="s_67" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="sw68" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_right_outlane"]
+
+[node name="s_69" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_70" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_71" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="sw72" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_bet2"]
+
+[node name="sw73" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_bonus_lane2"]
+
+[node name="sw74" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_boost1"]
+
+[node name="sw75" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="sw76" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_77" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_78" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_79" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_80" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="sw81" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -98.7
+offset_top = -98.7
+offset_right = 49.3
+offset_bottom = 49.3
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_right_orbit"]
+
+[node name="s_82" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 567.0
+offset_top = 752.0
+offset_right = 715.0
+offset_bottom = 900.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_83" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 760.0
+offset_right = 796.0
+offset_bottom = 908.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_84" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 743.0
+offset_top = 771.0
+offset_right = 891.0
+offset_bottom = 919.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_85" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 835.0
+offset_top = 777.0
+offset_right = 983.0
+offset_bottom = 925.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_86" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 923.0
+offset_top = 769.0
+offset_right = 1071.0
+offset_bottom = 917.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_87" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 764.0
+offset_right = 1172.0
+offset_bottom = 912.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_88" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 591.0
+offset_top = 866.0
+offset_right = 739.0
+offset_bottom = 1014.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_89" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 681.0
+offset_top = 877.0
+offset_right = 829.0
+offset_bottom = 1025.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="s_90" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 759.0
+offset_top = 871.0
+offset_right = 907.0
+offset_bottom = 1019.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="sw91" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 863.0
+offset_top = 876.0
+offset_right = 1011.0
+offset_bottom = 1024.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+tags = ["sw_right_inlane"]
+
+[node name="s_92" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 942.0
+offset_top = 858.0
+offset_right = 1090.0
+offset_bottom = 1006.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="sw93" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 1027.0
+offset_top = 863.0
+offset_right = 1175.0
+offset_bottom = 1011.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="sw94" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 591.0
+offset_top = 942.0
+offset_right = 739.0
+offset_bottom = 1090.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="sw95" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 681.0
+offset_top = 956.0
+offset_right = 829.0
+offset_bottom = 1104.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="sw96" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 960.0
+offset_right = 908.0
+offset_bottom = 1108.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="sw97" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 863.0
+offset_top = 956.0
+offset_right = 1011.0
+offset_bottom = 1104.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="sw98" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 948.0
+offset_top = 954.0
+offset_right = 1096.0
+offset_bottom = 1102.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")
+
+[node name="sw99" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 1040.0
+offset_top = 953.0
+offset_right = 1188.0
+offset_bottom = 1101.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ln7ea")
+texture_pressed = ExtResource("8_svoss")
+stretch_mode = 4
+script = ExtResource("7_e2jqc")

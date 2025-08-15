@@ -2,7 +2,7 @@
 
 mode:
   start_events: qualify_boost_targets_on_complete
-  stop_events: ball_ended, timer_boost_mode_complete
+  stop_events: ball_ended, timer_boost_mode_complete, boost3_flashing_hit
   priority: 1110
 
 shot_profiles: 
@@ -21,13 +21,6 @@ shot_profiles:
        sync_ms: 250
        show_tokens: 
          color: FFFFFF
-     - name: lit
-       show: on
-       loops: -1
-       sync_ms: 0
-       priority: 1
-       show_tokens: 
-         color: FFFFFF
 
 shots: 
   boost1:
@@ -41,8 +34,6 @@ shots:
         state: 1
       - events: boost_roving_move2, boost_roving_move1
         state: 0
-      - events: boost1_flashing_hit
-        state: 2
   boost2:
     switch: sw66
     show_tokens: 
@@ -53,8 +44,6 @@ shots:
         state: 1
       - events: boost_roving_move2, boost_roving_move3
         state: 0
-      - events: boost2_flashing_hit
-        state: 2
   boost3:
     switch: sw57
     show_tokens: 
@@ -65,8 +54,6 @@ shots:
         state: 1
       - events: boost_roving_move1, boost_roving_move3
         state: 0
-      - events: boost3_flashing_hit
-        state: 2
 
 event_player:
   timer_boost_roving_tick:
@@ -88,10 +75,9 @@ timers:
   boost_mode:
     start_running: true
     tick_interval: 1s
-    end_value: 60
+    end_value: 30
 
 variable_player:
-  roving_group_hit:
-    score: 50000
-
-
+  boost3_flashing_hit.1:
+    score: 100000
+    jackpot_boost_value: 50000

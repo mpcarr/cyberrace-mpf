@@ -53,7 +53,7 @@ shot_profiles:
 shot_groups:
   cyber_letters:
     shots: c_shot, y_shot, b_shot, e_shot, r_shot
-    reset_events: mode_cyber_started
+    reset_events: mode_qualify_cyber_started, cyber_letters_on_complete
 
 # ----- SCORING & LOGIC -----
 variable_player:

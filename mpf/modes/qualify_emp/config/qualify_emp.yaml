@@ -1,0 +1,39 @@
+#config_version=6
+
+mode:
+  start_events: ball_started
+  stop_events: ball_ended
+  priority: 1000
+
+shot_profiles: 
+  qualify_emp:
+    states: 
+     - name: unlit
+       show: off
+       loops: -1
+       speed: 1
+       sync_ms: 0
+     - name: on
+       show: led_color
+       loops: -1
+       speed: 1
+       sync_ms: 0
+       show_tokens: 
+         color: FFFFFF
+
+shots: 
+  emp_pop1:
+    switch: s_bumper_1
+    show_tokens: 
+      lights: bumper1
+    profile: qualify_emp
+  emp_pop2:
+    switch: s_bumper_2
+    show_tokens: 
+      lights: bumper2
+    profile: qualify_emp
+  emp_pop3:
+    switch: s_bumper_2
+    show_tokens: 
+      lights: bumper3
+    profile: qualify_emp
