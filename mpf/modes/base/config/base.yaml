@@ -58,7 +58,7 @@ variable_player:
 
 
 combo_switches:
-  both_flippers:
+  flippers_select:
     tag_1: left_flipper
     tag_2: right_flipper
     events_when_both: flippers_select

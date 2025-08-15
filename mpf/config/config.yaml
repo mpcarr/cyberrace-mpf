@@ -35,6 +35,12 @@ displays:
     width: 640
     height: 160
 
+virtual_platform_start_active_switches:
+  - s_trough1
+  - sw32
+  - sw33
+  - sw34
+
 servos:
   servo_ramp:           ##### servo controlling ramp diverter
     servo_min: 0.196    ##### OPP range 0-2550µs, my servo min is 500µs, 500/2550=0.196 
@@ -350,7 +356,7 @@ flippers:
 
 ball_devices:
   trough:
-    ball_switches: s_trough1, sw32, sw33, sw34, sw35, sw36, s_trough_jam
+    ball_switches: s_trough1, sw32, sw33, sw34, s_trough_jam
     eject_coil: c_trough_eject
     tags: trough, home, drain
     jam_switch: s_trough_jam
@@ -360,7 +366,6 @@ ball_devices:
   plunger:
     ball_switches: sw51
     eject_coil: c_plunger
-    player_controlled_eject_event: s_launch_button_active
     eject_targets: playfield
     eject_timeouts: 3s
     debug: true
