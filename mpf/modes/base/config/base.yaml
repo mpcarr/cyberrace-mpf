@@ -62,4 +62,5 @@ combo_switches:
     events_when_both: flippers_select
 
 sound_player:
-  mode_base_started: spinner
+  sw98_active: spinner1
+  sw99_active: spinner1
