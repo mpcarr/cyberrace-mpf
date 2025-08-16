@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://cekcn7ed0n777" path="res://fonts/TeenyTinyPixls5.fnt" id="3_r8cgk"]
 [ext_resource type="Script" uid="uid://bojo76gkx41ow" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="4_20xw8"]
 [ext_resource type="FontFile" uid="uid://xx52by00kae6" path="res://fonts/sendha42.fnt" id="5_du778"]
-[ext_resource type="AudioStream" uid="uid://c8ndfmtekvwx7" path="res://resources/music/cyberrace/Karl Casey - White Bat I - 02 Casualty.mp3" id="6_f5kbb"]
+[ext_resource type="AudioStream" uid="uid://ua086w6a13da" path="res://resources/music/cyberrace/Karl Casey - White Bat I - 01 Elysium.mp3" id="6_6vrr4"]
 
 [node name="Attract" type="Control"]
 layout_mode = 3
@@ -41,7 +41,7 @@ grow_vertical = 2
 theme_override_constants/separation = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(110, 11)
+custom_minimum_size = Vector2(256, 11)
 layout_mode = 2
 theme_override_constants/separation = 0
 
@@ -50,7 +50,7 @@ custom_minimum_size = Vector2(110, 8)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_r8cgk")
 theme_override_font_sizes/font_size = 5
-text = "12"
+text = "PRESS START"
 horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
@@ -58,6 +58,8 @@ script = ExtResource("4_20xw8")
 variable_type = 4
 variable_name = "score"
 comma_separate = true
+min_digits = 2
+initialize_empty = false
 metadata/_custom_type_script = "uid://bojo76gkx41ow"
 
 [node name="MPFVariable3" type="Label" parent="VBoxContainer/HBoxContainer"]
@@ -70,9 +72,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
 script = ExtResource("4_20xw8")
-variable_name = "player_num"
+variable_name = "number"
 comma_separate = true
 template_string = "Player %s"
+initialize_empty = false
 metadata/_custom_type_script = "uid://bojo76gkx41ow"
 
 [node name="MPFVariable2" type="Label" parent="VBoxContainer/HBoxContainer"]
@@ -80,7 +83,7 @@ custom_minimum_size = Vector2(110, 8)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_r8cgk")
 theme_override_font_sizes/font_size = 5
-text = "12"
+text = "PRESS START"
 horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
@@ -88,6 +91,8 @@ script = ExtResource("4_20xw8")
 variable_type = 5
 variable_name = "score"
 comma_separate = true
+min_digits = 2
+initialize_empty = false
 metadata/_custom_type_script = "uid://bojo76gkx41ow"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
@@ -107,10 +112,12 @@ clip_text = true
 script = ExtResource("4_20xw8")
 variable_name = "score"
 comma_separate = true
+min_digits = 2
+initialize_empty = false
 metadata/_custom_type_script = "uid://bojo76gkx41ow"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(110, 11)
+custom_minimum_size = Vector2(256, 11)
 layout_mode = 2
 theme_override_constants/separation = 0
 
@@ -119,7 +126,7 @@ custom_minimum_size = Vector2(110, 8)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_r8cgk")
 theme_override_font_sizes/font_size = 5
-text = "12"
+text = "PRESS START"
 horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
@@ -127,6 +134,8 @@ script = ExtResource("4_20xw8")
 variable_type = 6
 variable_name = "score"
 comma_separate = true
+min_digits = 2
+initialize_empty = false
 metadata/_custom_type_script = "uid://bojo76gkx41ow"
 
 [node name="MPFVariable3" type="Label" parent="VBoxContainer/HBoxContainer3"]
@@ -142,6 +151,7 @@ script = ExtResource("4_20xw8")
 variable_name = "ball"
 comma_separate = true
 template_string = "Ball %s"
+initialize_empty = false
 metadata/_custom_type_script = "uid://bojo76gkx41ow"
 
 [node name="MPFVariable2" type="Label" parent="VBoxContainer/HBoxContainer3"]
@@ -149,7 +159,7 @@ custom_minimum_size = Vector2(110, 8)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_r8cgk")
 theme_override_font_sizes/font_size = 5
-text = "12"
+text = "PRESS START"
 horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
@@ -157,6 +167,8 @@ script = ExtResource("4_20xw8")
 variable_type = 7
 variable_name = "score"
 comma_separate = true
+min_digits = 2
+initialize_empty = false
 metadata/_custom_type_script = "uid://bojo76gkx41ow"
 
 [node name="Line2D" type="Line2D" parent="."]
@@ -185,6 +197,7 @@ width = 1.0
 default_color = Color(0, 1, 1, 1)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_f5kbb")
+stream = ExtResource("6_6vrr4")
 autoplay = true
+bus = &"music"
 parameters/looping = true

@@ -17,9 +17,9 @@ hardware:
 
 bcp:
   connections:
-    local_display:
-      host: localhost #192.168.86.25
-      port: 5050
+	local_display:
+	  host: localhost #192.168.86.25
+	  port: 5050
   debug: true
 
 pin2dmd:
@@ -28,7 +28,7 @@ pin2dmd:
 
 rgb_dmds:
   default:
-    hardware_brightness: 0.9
-    source_display: main
-    fps: 30
-    only_send_changes: true
+	hardware_brightness: 0.9
+	source_display: main
+	fps: 30
+	only_send_changes: true

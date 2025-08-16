@@ -139,7 +139,8 @@ func _on_player_added(total_players: int) -> void:
 		self.hide()
 	# If this player number exceeds the number of players, don't show
 	elif self.player_number > total_players:
-		self.hide()
+		print("Hide")
+		#self.hide()
 	else:
 		# TODO: There is a gap here where a min/max var that applies to the current
 		# player won't connect to an update signal if the range is met during play.

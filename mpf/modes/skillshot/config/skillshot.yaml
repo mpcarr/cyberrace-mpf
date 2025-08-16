@@ -63,13 +63,22 @@ shot_groups:
 event_player: 
   skill_leftramp_flashing_super_hit: 
     - award_super_skillshot
-    - end_skillshot
+    - end_skillshot|3s
   skill_shot_flashing_hit: 
     - award_skillshot
-    - end_skillshot
+    - end_skillshot|3s
 
 variable_player:
   award_skillshot:
     score: 100000
   award_super_skillshot:
     score: 250000
+
+slide_player:
+  award_skillshot:
+    skillshot_overlay:
+      expire: 3s
+
+sound_player:
+  award_skillshot: skillshot
+  debug: true
