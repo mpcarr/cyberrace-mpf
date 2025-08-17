@@ -38,7 +38,10 @@ show_player:
 light_player: 
   mode_base_started: 
     T_GI: 
-      color: FFFFFF
+      color: FF00FF
+    bumper1:
+      color: FF00FF
+    insert: FFFFFF
 
 slide_player:
   mode_base_started: base
@@ -61,6 +64,9 @@ combo_switches:
     tag_2: right_flipper
     events_when_both: flippers_select
 
+
 sound_player:
-  sw98_active: spinner1
-  sw99_active: spinner1
+  sw99_active: 
+    spinner1:
+      bus: effects
+  debug: true

@@ -30,13 +30,13 @@ shot_profiles:
 
 shots: 
   skill_lane1:
-    switch: sw65
+    switch: sw72
     show_tokens: 
       lights: bonus_lane1
     advance_events: mode_skillshot_started
     profile: skillshot
   skill_lane2:
-    switch: sw73
+    switch: sw88
     show_tokens: 
       lights: bonus_lane2
     profile: skillshot
@@ -80,5 +80,6 @@ slide_player:
       expire: 3s
 
 sound_player:
+  mode_skillshot_started: skillshot
   award_skillshot: skillshot
   debug: true
