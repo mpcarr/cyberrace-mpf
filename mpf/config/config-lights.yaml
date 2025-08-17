@@ -5,7 +5,7 @@ lights:
     number: 0-0-0
     subtype: led
     type: grb
-    tags: bonus_lane1, insert
+    tags: bonus_lane3, insert
   l02:
     previous: l01
     subtype: led
@@ -15,7 +15,7 @@ lights:
     previous: l02
     subtype: led
     type: grb
-    tags: bonus_lane3, insert
+    tags: bonus_lane1, insert
 
   l04:
     previous: l03
@@ -387,149 +387,231 @@ lights:
     number: 1-0-0
     subtype: led
     type: grb
-    tags: T_GI
+    tags: insert, lock_K
   l101:
     previous: l100
     subtype: led
     type: grb
-    tags: T_GI
+    tags: insert, lock_o
   l102:
     previous: l101
     subtype: led
     type: grb
-    tags: T_GI
+    tags: insert, lock_c
   l103:
     previous: l102
     subtype: led
     type: grb
-    tags: T_GI
+    tags: insert, lock_l
   l104:
     previous: l103
     subtype: led
-    type: grb
+    type: rgb
     tags: T_GI
   l105:
     previous: l104
     subtype: led
-    type: grb
+    type: rgb
     tags: T_GI
   l106:
     previous: l105
     subtype: led
-    type: grb
+    type: rgb
     tags: T_GI
   l107:
     previous: l106
     subtype: led
-    type: grb
+    type: rgb
     tags: T_GI
   l108:
     previous: l107
     subtype: led
-    type: grb
+    type: rgb
     tags: T_GI
   l109:
     previous: l108
     subtype: led
-    type: grb
+    type: rgb
     tags: T_GI
   l110:
     previous: l109
     subtype: led
-    type: grb
+    type: rgb
     tags: T_GI
   l111:
     previous: l110
     subtype: led
-    type: grb
+    type: rgb
     tags: T_GI
   l112:
     previous: l111
     subtype: led
-    type: grb
-    tags: T_GI
+    type: grbw
+    tags: bumper1
   l113:
     previous: l112
     subtype: led
-    type: grb
-    tags: T_GI
+    type: grbw
+    tags: bumper1
   l114:
     previous: l113
     subtype: led
-    type: grb
-    tags: T_GI
+    type: grbw
+    tags: bumper1
   l115:
     previous: l114
     subtype: led
-    type: grb
-    tags: T_GI
+    type: grbw
+    tags: bumper1
   l116:
     previous: l115
     subtype: led
-    type: grb
-    tags: T_GI
+    type: grbw
+    tags: bumper1
   l117:
     previous: l116
     subtype: led
-    type: grb
-    tags: T_GI
+    type: grbw
+    tags: bumper1
   l118:
     previous: l117
     subtype: led
-    type: grb
-    tags: T_GI
+    type: grbw
+    tags: bumper1
   l119:
     previous: l118
     subtype: led
-    type: grb
-    tags: T_GI
+    type: grbw
+    tags: bumper1
   l120:
     previous: l119
     subtype: led
-    type: grb
+    type: rgb
     tags: T_GI
   l121:
     previous: l120
     subtype: led
-    type: grb
+    type: rgb
     tags: T_GI
   l122:
     previous: l121
     subtype: led
-    type: grb
+    type: rgb
     tags: T_GI
   l123:
     previous: l122
     subtype: led
-    type: grb
+    type: rgb
     tags: T_GI
   l124:
     previous: l123
     subtype: led
-    type: grb
-    tags: insert, ball_save
+    type: rgb
+    tags: T_GI
   l125:
     previous: l124
     subtype: led
-    type: grb
+    type: rgb
     tags: T_GI
   l126:
     previous: l125
     subtype: led
-    type: grb
+    type: rgb
     tags: T_GI
   l127:
     previous: l126
     subtype: led
-    type: grb
+    type: rgb
     tags: T_GI
   l128:
     previous: l127
     subtype: led
     type: grb
-    tags: T_GI
+    tags: insert, ball_save
   l129:
     previous: l128
     subtype: led
-    type: grb
+    type: rgb
     tags: T_GI
+  l130:
+    previous: l129
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l131:
+    previous: l130
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l132:
+    previous: l131
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l133:
+    previous: l132
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l134:
+    previous: l133
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l135:
+    previous: l134
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l136:
+    previous: l135
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l137:
+    previous: l136
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l138:
+    previous: l137
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l139:
+    previous: l138
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l140:
+    previous: l139
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l141:
+    previous: l140
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l142:
+    previous: l141
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l143:
+    previous: l142
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l144:
+    previous: l143
+    subtype: led
+    type: rgb
+    tags: T_GI
+  l145:
+    previous: l144
+    subtype: led
+    type: rgb
+    tags: T_GI
+  
+  

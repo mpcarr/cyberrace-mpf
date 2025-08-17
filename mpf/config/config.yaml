@@ -230,8 +230,9 @@ switches:
     number: 1-0-86
   s_87:
     number: 1-0-87
-  s_88:
+  sw88:
     number: 1-0-88
+    tags: sw_bonus_lane2
   sw89:
     number: 1-0-89
     tags: sw_bet_e
