@@ -29,8 +29,33 @@ shots:
     show_tokens: 
       lights: lock
     profile: qualify_multiball
+  lock_l:
+    show_tokens: 
+      lights: lock_l
+    profile: qualify_multiball
+    control_events: 
+      - events: evt_light_lock_l
+        state: 1
+      - events: 
+        state: 0
 
 variable_player:
   light_lock_hit:
     score: 50000
     lock_hits: 1
+  light_lock_hit{current_player.lock_l == 0}:
+    lock_l:
+      int: 1
+      action: set
+  light_lock_hit{current_player.lock_l == 1 and current_player.lock_o == 0}:
+    lock_o:
+      int: 1
+      action: set
+  light_lock_hit{current_player.lock_o == 1 and current_player.lock_c == 0}:
+    lock_c:
+      int: 1
+      action: set
+  light_lock_hit{current_player.lock_c == 1 and current_player.lock_k == 0}:
+    lock_k:
+      int: 1
+      action: set

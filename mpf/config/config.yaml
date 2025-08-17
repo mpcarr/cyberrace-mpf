@@ -30,6 +30,7 @@ modes:
   - boost
   - skillshot
   - qualify_cyber
+  - qualify_multiball
 
 opp:
    ports: /dev/ttyACM0, /dev/ttyACM1

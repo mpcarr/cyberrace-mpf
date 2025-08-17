@@ -1,0 +1,13 @@
+#config_version=6
+
+player_vars:
+  lock_hits:
+    initial_value: 3
+  lock_l:
+    initial_value: 1
+  lock_o:
+    initial_value: 1
+  lock_c:
+    initial_value: 1
+  lock_k:
+    initial_value: 0
