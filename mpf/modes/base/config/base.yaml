@@ -38,10 +38,9 @@ show_player:
 light_player: 
   mode_base_started: 
     T_GI: 
-      color: FF00FF
+      color: FFFFFF
     bumper1:
-      color: FF00FF
-    insert: FFFFFF
+      color: FFFFFF
 
 slide_player:
   mode_base_started: base

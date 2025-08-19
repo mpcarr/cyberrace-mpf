@@ -1,0 +1,8 @@
+#config_version=6
+
+blinkenlights:
+  right_ramp:
+    color_duration: 250ms
+    off_when_multiple: false
+    light: l13
+    priority: 1000

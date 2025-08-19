@@ -526,8 +526,8 @@ lights:
   l128:
     previous: l127
     subtype: led
-    type: rgb
-    tags: T_GI
+    type: grb
+    tags: insert, ball_save
   l129:
     previous: l128
     subtype: led
@@ -562,7 +562,7 @@ lights:
     previous: l134
     subtype: led
     type: rgb
-    tags: T_GI
+    tags: insert, ball_save
   l136:
     previous: l135
     subtype: led

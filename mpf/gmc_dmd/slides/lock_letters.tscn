@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=3 uid="uid://ucyqn5c52ias"]
+
+[ext_resource type="Script" uid="uid://cdwas3gbf7w3g" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_w3aw4"]
+[ext_resource type="FontFile" uid="uid://xx52by00kae6" path="res://fonts/sendha42.fnt" id="2_4x4lh"]
+[ext_resource type="Script" uid="uid://bojo76gkx41ow" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_hllxu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rabqq"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.384314, 0, 1)
+
+[node name="lock_letters" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w3aw4")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rabqq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -21.0
+offset_right = 43.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(22, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0.686275, 0, 1)
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("2_4x4lh")
+theme_override_font_sizes/font_size = 42
+text = "L"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_hllxu")
+variable_name = "lock_l"
+metadata/_custom_type_script = "uid://bojo76gkx41ow"
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(22, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0.686275, 0, 1)
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("2_4x4lh")
+theme_override_font_sizes/font_size = 42
+text = "O"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_hllxu")
+variable_name = "lock_o"
+metadata/_custom_type_script = "uid://bojo76gkx41ow"
+
+[node name="Label3" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(22, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0.686275, 0, 1)
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("2_4x4lh")
+theme_override_font_sizes/font_size = 42
+text = "C"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_hllxu")
+variable_name = "lock_c"
+metadata/_custom_type_script = "uid://bojo76gkx41ow"
+
+[node name="Label4" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(22, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0.686275, 0, 1)
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("2_4x4lh")
+theme_override_font_sizes/font_size = 42
+text = "K"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_hllxu")
+variable_name = "lock_k"
+metadata/_custom_type_script = "uid://bojo76gkx41ow"

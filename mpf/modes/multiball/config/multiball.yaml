@@ -1,64 +1,69 @@
 #config_version=6
 
 mode:
-  start_events: ball_started
-  stop_events: ball_ended
-  priority: 1000
+  start_events: multiball_bridge_started
+  stop_events: multiball_bridge_ended
+  priority: 1310
 
-ball_saves: 
-  base:
-    active_time: 10s
-    grace_period: 3s
-    hurry_up_time: 5s
-    enable_events: mode_base_started
-    timer_start_events: balldevice_plunger_ball_eject_success
-    auto_launch: true
-    balls_to_save: -1
+shots:
+  multiball_bottom_spinner:
+    switch: sw98
+    profile: multiball_jackpots
+    show_tokens: 
+      lights: spinner_bottom
+  multiball_left_orbit:
+    switch: sw41
+    profile: multiball_jackpots
+    show_tokens: 
+      lights: left_orbit
+  multiball_left_ramp:
+    switch: sw85
+    profile: multiball_jackpots
+    show_tokens: 
+      lights: left_ramp
+  multiball_right_ramp:
+    switch: sw86
+    profile: multiball_jackpots
+    show_tokens: 
+      lights: right_ramp
+  multiball_right_orbit:
+    switch: sw81
+    profile: multiball_jackpots
+    show_tokens: 
+      lights: right_orbit
+  multiball_top_spinner:
+    switch: sw99
+    profile: multiball_jackpots
+    show_tokens: 
+      lights: spinner_top
 
-show_player: 
-  ball_save_base_timer_start: 
-    flash_color: 
-      key: ball_save
-      show_tokens: 
-        lights: ball_save
-        color: FFFFFF
-  ball_save_base_hurry_up: 
-    flash_color: 
-      key: ball_save
-      speed: 4
-      show_tokens: 
-        lights: ball_save
-        color: FFFFFF
-  ball_save_base_grace_period: 
-    flash_color: 
-      action: stop
-      key: ball_save
+shot_profiles:
+  multiball_jackpots:
+    states:
+      - name: flashing
+        show: flash_color
+        loops: -1
+        speed: 4
+        sync_ms: 0
+        show_tokens: 
+          color: 00FF00
+      - name: off
+        show: off
+        loops: -1
+        sync_ms: 0
 
-
-light_player: 
-  mode_base_started: 
-    T_GI: 
-      color: FFFFFF
+# Group for completion detection + reset on mode start
+shot_groups:
+  multiball_shots:
+    shots: multiball_bottom_spinner, multiball_left_orbit, multiball_left_ramp, multiball_right_ramp, multiball_right_orbit, multiball_top_spinner
+    reset_events: multiball_super_hit, multiball_shots_complete
 
 slide_player:
-  mode_base_started: base
+  multiball_shots_flashing_hit:
+    multiball_jackpot:
+      expire: 2
 
-
+# ----- SCORING & LOGIC -----
 variable_player:
-  s_bumper_1_active:
-    score: 1000
-  s_bumper_2_active:
-    score: 1000
-  s_bumper_3_active:
-    score: 1000
-  s_left_sling_active:
-    score: 1000
-  s_right_sling_active:
-    score: 1000
-
-
-combo_switches:
-  both_flippers:
-    tag_1: left_flipper
-    tag_2: right_flipper
-    events_when_both: flippers_select
+  multiball_shots_flashing_hit:
+    score: current_player.jackpot_value + current_player.jackpot_boost_value
