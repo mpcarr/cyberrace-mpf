@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpt3348wt3tuq"]
+[gd_scene load_steps=7 format=3 uid="uid://dpt3348wt3tuq"]
 
 [ext_resource type="Script" uid="uid://cdwas3gbf7w3g" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_6vrr4"]
 [ext_resource type="Texture2D" uid="uid://dyke4e71xl1jn" path="res://Untitled-1.png" id="2_smx5b"]
 [ext_resource type="FontFile" uid="uid://cekcn7ed0n777" path="res://fonts/TeenyTinyPixls5.fnt" id="3_r8cgk"]
 [ext_resource type="Script" uid="uid://bojo76gkx41ow" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="4_20xw8"]
 [ext_resource type="FontFile" uid="uid://xx52by00kae6" path="res://fonts/sendha42.fnt" id="5_du778"]
+[ext_resource type="AudioStream" uid="uid://ua086w6a13da" path="res://resources/music/cyberrace/Karl Casey - White Bat I - 01 Elysium.mp3" id="6_6vrr4"]
 
 [node name="Attract" type="Control"]
 layout_mode = 3
@@ -194,3 +195,8 @@ rotation = 3.14159
 points = PackedVector2Array(0, 0, 10, 12, 100, 12, 110, 0)
 width = 1.0
 default_color = Color(0, 1, 1, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_6vrr4")
+autoplay = true
+bus = &"music"

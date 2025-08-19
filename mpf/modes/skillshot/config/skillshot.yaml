@@ -86,7 +86,6 @@ slide_player:
       expire: 3s
 
 sound_player:
-  mode_skillshot_started: skillshot
   award_skillshot: skillshot
   debug: true
 
