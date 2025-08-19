@@ -30,6 +30,7 @@ modes:
   - boost
   - skillshot
   - qualify_cyber
+  - qualify_emp
 
 opp:
    ports: /dev/ttyACM0, /dev/ttyACM1
@@ -213,13 +214,15 @@ switches:
     number: 1-0-78
   s_79:
     number: 1-0-79
-  s_80:
+  sw80:
     number: 1-0-80
+    tags: sw_left_ramp
   sw81:
     number: 1-0-81
     tags: sw_right_orbit
-  s_82:
+  sw82:
     number: 1-0-82
+    tags: sw_right_ramp
   s_83:
     number: 1-0-83
   s_84:
@@ -314,6 +317,7 @@ coils:
   c_shortcut_scoop:
     number: 1-0-3
     default_pulse_ms: 50
+    default_pulse_power: 1
   c_left_vuk:
     number: 1-0-6
     default_pulse_ms: 11
