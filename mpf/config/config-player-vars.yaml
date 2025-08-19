@@ -4,10 +4,23 @@ player_vars:
   lock_hits:
     initial_value: 3
   lock_l:
-    initial_value: 1
+    initial_value: ""
+    value_type: str
   lock_o:
-    initial_value: 1
+    initial_value: ""
+    value_type: str
   lock_c:
-    initial_value: 1
+    initial_value: ""
+    value_type: str
   lock_k:
+    initial_value: ""
+    value_type: str
+  lock_activations:
+    initial_value: 0
+  boost_activations:
+    initial_value: 1
+    value_type: int
+  jackpot_value:
+    initial_value: 2500000
+  jackpot_boost_value:
     initial_value: 0

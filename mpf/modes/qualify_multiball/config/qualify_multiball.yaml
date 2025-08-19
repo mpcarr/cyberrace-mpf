@@ -7,55 +7,166 @@ mode:
 
 shot_profiles: 
   qualify_multiball:
+    advance_on_hit: false
     states: 
-     - name: flash_color
-       show: off
+     - name: flash
+       show: flash_color
        loops: -1
-       speed: 1
+       speed: 4
        sync_ms: 0
        show_tokens: 
          color: FFFFFF
+  qualify_multiball_locks:
+    states: 
+     - name: off
+       show: off
+       loops: -1
+       sync_ms: 0
      - name: on
        show: led_color
        loops: -1
        speed: 1
        sync_ms: 0
        show_tokens: 
-         color: FFFFFF
+         color: 00FF00
 
 shots: 
   light_lock:
-    switch: sw64
+    switch: sw73
+    disable_events: qualify_multiball_locks_on_complete
     show_tokens: 
       lights: lock
     profile: qualify_multiball
   lock_l:
     show_tokens: 
       lights: lock_l
-    profile: qualify_multiball
+    profile: qualify_multiball_locks
     control_events: 
-      - events: evt_light_lock_l
+      - events: mode_qualify_multiball_started{current_player.lock_l == 'L'}
         state: 1
-      - events: 
+      - events: player_lock_l{value==''}
         state: 0
+      - events: player_lock_l{value=='L'}
+        state: 1
+  lock_o:
+    show_tokens: 
+      lights: lock_o
+    profile: qualify_multiball_locks
+    control_events: 
+      - events: mode_qualify_multiball_started{current_player.lock_o == 'O'}
+        state: 1
+      - events: player_lock_o{value==''}
+        state: 0
+      - events: player_lock_o{value=='O'}
+        state: 1
+  lock_c:
+    show_tokens: 
+      lights: lock_c
+    profile: qualify_multiball_locks
+    control_events: 
+      - events: mode_qualify_multiball_started{current_player.lock_c == 'C'}
+        state: 1
+      - events: player_lock_c{value==''}
+        state: 0
+      - events: player_lock_c{value=='C'}
+        state: 1
+  lock_k:
+    show_tokens: 
+      lights: lock_k
+    profile: qualify_multiball_locks
+    control_events: 
+      - events: mode_qualify_multiball_started{current_player.lock_k == 'K'}
+        state: 1
+      - events: player_lock_k{value==''}
+        state: 0
+      - events: player_lock_k{value=='K'}
+        state: 1
+  lock_vuk:
+    switch: sw95
+    start_enabled: false
+    enable_events: qualify_multiball_locks_on_complete
+    profile: qualify_multiball
+
+shot_groups:
+  qualify_multiball_locks:
+    shots: lock_l, lock_o, lock_c, lock_k
 
 variable_player:
   light_lock_hit:
     score: 50000
     lock_hits: 1
-  light_lock_hit{current_player.lock_l == 0}:
-    lock_l:
-      int: 1
-      action: set
-  light_lock_hit{current_player.lock_l == 1 and current_player.lock_o == 0}:
-    lock_o:
-      int: 1
-      action: set
-  light_lock_hit{current_player.lock_o == 1 and current_player.lock_c == 0}:
-    lock_c:
-      int: 1
-      action: set
-  light_lock_hit{current_player.lock_c == 1 and current_player.lock_k == 0}:
+  light_lock_hit{current_player.lock_c == 'C' and current_player.lock_k == ''}:
     lock_k:
-      int: 1
+      string: "K"
       action: set
+  light_lock_hit{current_player.lock_o == 'O' and current_player.lock_c == ''}:
+    lock_c:
+      string: "C"
+      action: set
+  light_lock_hit{current_player.lock_l == 'L' and current_player.lock_o == ''}:
+    lock_o:
+      string: "O"
+      action: set
+  light_lock_hit{current_player.lock_l == ''}:
+    lock_l:
+      string: "L"
+      action: set
+
+blinkenlight_player:
+  qualify_multiball_locks_on_complete:
+    right_ramp:
+      action: add
+      color: 00FF00
+      key: locks_open
+  multiball_lock_bridge_full:
+    right_ramp:
+      action: remove
+      key: locks_open
+
+
+multiball_locks:
+  bridge:
+    balls_to_lock: 3
+    balls_to_replace: 2
+    lock_devices: bd_bridge
+    locked_ball_counting_strategy: physical_only
+
+multiballs:
+  bridge:
+    ball_count: 3
+    replace_balls_in_play: true
+    ball_locks: bd_bridge
+    start_events: trigger_bridge_multiball
+
+slide_player:
+  light_lock_hit:
+    lock_letters:
+      expire: 3
+  player_lock_k{value=='K'}: 
+    lock_letters_K:
+      expire: 2
+  player_lock_c{value=='C'}: 
+    lock_letters_C:
+      expire: 2
+  player_lock_o{value=='O'}: 
+    lock_letters_O:
+      expire: 2
+  player_lock_l{value=='L'}: 
+    lock_letters_L:
+      expire: 2
+  lock_vuk_hit:
+    ball_locked:
+      expire: 3
+  multiball_lock_bridge_full:
+    prepare_multiball:
+      expire: 6
+
+show_player:
+  lock_vuk_hit:
+    ball_locked:
+      loops: 0
+      events_when_completed: trigger_bridge_lock
+  multiball_lock_bridge_full:
+    prepare_multiball:
+      loops: 0
+      events_when_completed: trigger_bridge_multiball

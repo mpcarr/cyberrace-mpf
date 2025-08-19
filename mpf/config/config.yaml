@@ -31,6 +31,7 @@ modes:
   - skillshot
   - qualify_cyber
   - qualify_multiball
+  - multiball
 
 opp:
    ports: /dev/ttyACM0, /dev/ttyACM1
@@ -62,6 +63,8 @@ servos:
 
 config:
   - config-lights.yaml
+  - config-player-vars.yaml
+  - config-blinken.yaml
 
 switches:
   s_left_flipper:
@@ -265,6 +268,8 @@ switches:
   sw99:
     number: 1-0-1
     type: NO
+  swDummy:
+    number: 1-0-255
   
 coils:
   c_flipper_left_main:
@@ -412,7 +417,13 @@ ball_devices:
     eject_targets: playfield
     eject_timeouts: 1s
     debug: true
-  
+  bd_bridge:
+    entrance_switch: swDummy
+    ball_capacity: 3
+    entrance_events: trigger_bridge_lock
+    mechanical_eject: true
+    eject_timeouts: 1s
+
 light_settings:
   color_correction_profiles:
     NeoSeg_red:
@@ -437,10 +448,6 @@ machine_vars:
     initial_value: 75000
     value_type: int
 
-player_vars:
-  boost_activations:
-    initial_value: 1
-    value_type: int
 
 autofire_coils:
   ac_bumper_1:

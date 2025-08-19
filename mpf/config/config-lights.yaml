@@ -387,7 +387,7 @@ lights:
     number: 1-0-0
     subtype: led
     type: grb
-    tags: insert, lock_K
+    tags: insert, lock_k
   l101:
     previous: l100
     subtype: led
@@ -527,7 +527,7 @@ lights:
     previous: l127
     subtype: led
     type: grb
-    tags: insert, ball_save
+    tags: T_GI
   l129:
     previous: l128
     subtype: led
@@ -562,7 +562,7 @@ lights:
     previous: l134
     subtype: led
     type: rgb
-    tags: T_GI
+    tags: insert, ball_save
   l136:
     previous: l135
     subtype: led

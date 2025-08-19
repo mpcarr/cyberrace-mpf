@@ -88,4 +88,4 @@ timers:
 variable_player:
   boost_roving_flashing_hit.1:
     score: 100000
-    jackpot_boost_value: 50000
+    jackpot_boost_value: 1000000

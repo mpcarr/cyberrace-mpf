@@ -2,7 +2,7 @@
 
 mode:
   start_events: ball_started
-  stop_events: end_skillshot, skill_shot_unlit_hit, timer_skillshot_complete
+  stop_events: end_skillshot, skill_shot_unlit_hit, timer_skillshot_complete, timer_skillshot_complete
   priority: 1020
 
 shot_profiles: 
@@ -60,6 +60,12 @@ shot_groups:
     rotate_left_events: s_left_flipper_active
     rotate_right_events: s_right_flipper_active
 
+timers:
+  skillshot:
+    end_value: 15
+    start_running: true
+
+
 event_player: 
   skill_leftramp_flashing_super_hit: 
     - award_super_skillshot
@@ -83,3 +89,4 @@ sound_player:
   mode_skillshot_started: skillshot
   award_skillshot: skillshot
   debug: true
+

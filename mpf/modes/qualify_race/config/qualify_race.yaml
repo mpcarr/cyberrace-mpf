@@ -1,8 +1,8 @@
 #config_version=6
 
 mode:
-  start_events: ball_started
-  stop_events: ball_ended
+  start_events: ball_started, multiball_bridge_ended
+  stop_events: ball_ended, multiball_bridge_started
   priority: 1010
 
 shot_profiles: 
@@ -33,7 +33,7 @@ shot_profiles:
        speed: 1
        sync_ms: 0
        show_tokens: 
-         color: FFFFFF
+         color: FF0000
 
 shots: 
   left_outlane:
@@ -71,7 +71,7 @@ shots:
   right_orbit_race_qualify:
     show_tokens: 
       lights: right_orbit
-      color: 00FF00
+      color: FF0000
     disable_events: mode_race_selection_starting
     profile: qualify_race_ready
     reset_events: mode_race_selection_starting
