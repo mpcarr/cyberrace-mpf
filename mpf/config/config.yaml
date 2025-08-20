@@ -62,6 +62,17 @@ servos:
     reset_events: ball_ending, machine_reset_phase_3, game_starting, multiball_lock_bridge_full
     number: 1-0-11
     debug: true
+  servo_bridge:           ##### servo controlling ramp diverter
+    servo_min: 0.196    ##### OPP range 0-2550µs, my servo min is 500µs, 500/2550=0.196 
+    servo_max: 0.98     ##### my servo max is 2500µs, 2500/2550=0.98
+    speed_limit: 160
+    positions:          ##### percentages along range of 0.196(500µs=0) to 0.98(2500µs=1)
+      0.83: s_right_flipper_active #bridge_div_open      ## 800µs  I believe open==down
+      0.4: s_left_flipper_active #bridge_div_closed   ## 1775µs  and close==up, but I may be wrong :)
+    reset_position: 0.4
+    reset_events: machine_reset_phase_3, game_starting
+    number: 1-0-10
+    debug: true
 
 config:
   - config-lights.yaml
@@ -272,8 +283,6 @@ switches:
   sw99:
     number: 1-0-1
     type: NO
-  swDummy:
-    number: 1-0-255
   
 coils:
   c_flipper_left_main:
@@ -330,7 +339,7 @@ coils:
     default_pulse_ms: 11
   c_lock_vuk:
     number: 1-0-4
-    default_pulse_ms: 11
+    default_pulse_ms: 10
   c_center_vuk:
     number: 1-0-5
     default_pulse_ms: 12
@@ -378,7 +387,7 @@ flippers:
 
 ball_devices:
   trough:
-    ball_switches: s_trough1, sw32, sw33, sw34, s_trough_jam
+    ball_switches: s_trough1, sw32, sw33, sw34
     eject_coil: c_trough_eject
     tags: trough, home, drain
     jam_switch: s_trough_jam
@@ -423,7 +432,7 @@ ball_devices:
     eject_timeouts: 1s
     debug: true
   bd_bridge:
-    entrance_switch: swDummy
+    entrance_switch: s_92
     ball_capacity: 3
     entrance_events: trigger_bridge_lock
     mechanical_eject: true

@@ -6,7 +6,7 @@ slide_player:
 
 show_player:
   mode_attract_started: 
-    sweep_up:
+    prepare_multiball:
       speed: 1
       loops: -1
 
