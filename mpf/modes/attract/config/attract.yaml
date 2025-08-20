@@ -13,3 +13,4 @@ show_player:
 light_player:
   mode_attract_started: 
     bumper1: FF0000%50
+    bumper2: FF0000%50

@@ -3,23 +3,19 @@
 mode:
   start_events: ball_started
   stop_events: ball_ended
-  priority: 1000
+  priority: 1400
 
 shot_profiles: 
   qualify_emp:
+    advance_on_hit: false
     states: 
-     - name: unlit
-       show: off
-       loops: -1
-       speed: 1
-       sync_ms: 0
-     - name: on
+     - name: lit
        show: led_color
-       loops: -1
-       speed: 1
-       sync_ms: 0
        show_tokens: 
          color: FFFFFF
+       loops: -1
+       speed: 1
+       sync_ms: 0
 
 shots: 
   emp_pop1:
@@ -32,8 +28,12 @@ shots:
     show_tokens: 
       lights: bumper2
     profile: qualify_emp
-  emp_pop3:
-    switch: s_bumper_2
-    show_tokens: 
-      lights: bumper3
-    profile: qualify_emp
+
+show_player:
+  emp_pop1_hit: 
+    flash_color:
+      show_tokens:
+        lights: bumper1
+        color: FF00FF
+      speed: 4
+      loops: 0
