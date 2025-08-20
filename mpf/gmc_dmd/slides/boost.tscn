@@ -17,7 +17,7 @@ script = ExtResource("1_2nfgp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_cvtvn")
 autoplay = "default"
-frame_progress = 0.781709
+frame_progress = 0.684391
 centered = false
 
 [node name="Label" type="Label" parent="."]
