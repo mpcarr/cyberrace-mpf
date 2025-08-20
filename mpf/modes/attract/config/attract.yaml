@@ -6,11 +6,6 @@ slide_player:
 
 show_player:
   mode_attract_started: 
-    prepare_multiball:
+    sweep_up:
       speed: 1
       loops: -1
-
-light_player:
-  mode_attract_started: 
-    bumper1: FF0000%50
-    bumper2: FF0000%50
