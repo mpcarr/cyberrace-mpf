@@ -84,12 +84,14 @@ shots:
   lock_vuk:
     switch: sw95
     start_enabled: false
-    enable_events: qualify_multiball_locks_on_complete
+    enable_events: qualify_multiball_locks_on_complete, mode_qualify_multiball_started{current_player.lock_hits == 4}
+    disable_events: multiball_bridge_started
     profile: qualify_multiball
 
 shot_groups:
   qualify_multiball_locks:
     shots: lock_l, lock_o, lock_c, lock_k
+    restart_events: multiball_bridge_ended
 
 variable_player:
   light_lock_hit:
@@ -111,9 +113,31 @@ variable_player:
     lock_l:
       string: "L"
       action: set
+  multiball_bridge_ended:
+    lock_l:
+      string: ''
+      action: set
+    lock_o:
+      string: ''
+      action: set
+    lock_c:
+      string: ''
+      action: set
+    lock_k:
+      string: ''
+      action: set
+    lock_hits:
+      string: 0
+      action: set
+      
 
 blinkenlight_player:
   qualify_multiball_locks_on_complete:
+    right_ramp:
+      action: add
+      color: 00FF00
+      key: locks_open
+  mode_qualify_multiball_started{current_player.lock_hits == 4}:
     right_ramp:
       action: add
       color: 00FF00

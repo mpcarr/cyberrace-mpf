@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://dudxgydmtufst"]
+
+[ext_resource type="Script" uid="uid://cdwas3gbf7w3g" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_2nfgp"]
+[ext_resource type="SpriteFrames" uid="uid://dv4l1ke3hlg1s" path="res://resources/animations/boost/boost_sprite_frames.tres" id="2_cvtvn"]
+[ext_resource type="FontFile" uid="uid://xx52by00kae6" path="res://fonts/sendha42.fnt" id="3_s7lmu"]
+[ext_resource type="AudioStream" uid="uid://b5au5l1h1r1in" path="res://resources/sounds/fx-boost.wav" id="4_cvtvn"]
+
+[node name="Boost" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2nfgp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_cvtvn")
+autoplay = "default"
+frame_progress = 0.781709
+centered = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("3_s7lmu")
+theme_override_font_sizes/font_size = 42
+text = "BOOST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_cvtvn")
+autoplay = true
+bus = &"effects"

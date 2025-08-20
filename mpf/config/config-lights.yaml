@@ -392,12 +392,12 @@ lights:
     previous: l100
     subtype: led
     type: grb
-    tags: insert, lock_o
+    tags: insert, lock_c
   l102:
     previous: l101
     subtype: led
     type: grb
-    tags: insert, lock_c
+    tags: insert, lock_o
   l103:
     previous: l102
     subtype: led

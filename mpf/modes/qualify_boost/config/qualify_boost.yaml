@@ -49,3 +49,8 @@ variable_player:
   qualify_boost_targets_hit:
     score: 10000
 
+
+slide_player:
+  qualify_boost_targets_hit:
+    boost:
+      expire: 3

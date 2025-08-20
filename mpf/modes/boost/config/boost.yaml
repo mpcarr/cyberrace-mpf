@@ -89,3 +89,7 @@ variable_player:
   boost_roving_flashing_hit.1:
     score: 100000
     jackpot_boost_value: 1000000
+
+sound_player:
+  mode_boost_started: boost_mode
+

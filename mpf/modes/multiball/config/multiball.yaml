@@ -7,7 +7,7 @@ mode:
 
 shots:
   multiball_bottom_spinner:
-    switch: sw98
+    switch: sw99
     profile: multiball_jackpots
     show_tokens: 
       lights: spinner_bottom

@@ -55,9 +55,10 @@ servos:
     speed_limit: 160
     positions:          ##### percentages along range of 0.196(500µs=0) to 0.98(2500µs=1)
       0.60: ramp_div_open     ## 800µs  I believe open==down
-      0.83: ramp_div_closed   ## 1775µs  and close==up, but I may be wrong :)
+      0.83: qualify_multiball_locks_on_complete   ## 1775µs  and close==up, but I may be wrong :)
+      0.831: ball_started{current_player.lock_hits == 4}
     reset_position: 0.60
-    reset_events: ball_ending, machine_reset_phase_3, game_starting
+    reset_events: ball_ending, machine_reset_phase_3, game_starting, multiball_lock_bridge_full
     number: 1-0-11
     debug: true
 
