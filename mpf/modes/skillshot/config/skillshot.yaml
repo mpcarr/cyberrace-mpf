@@ -63,7 +63,10 @@ shot_groups:
 timers:
   skillshot:
     end_value: 15
-    start_running: true
+    start_running: false
+    control_events:
+      - event: balldevice_plunger_ball_eject_success
+        action: start
 
 
 event_player: 
