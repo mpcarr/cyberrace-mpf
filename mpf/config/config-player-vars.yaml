@@ -24,3 +24,11 @@ player_vars:
     initial_value: 2500000
   jackpot_boost_value:
     initial_value: 0
+  bonusX:
+    initial_value: 1
+  bonus_races:
+    initial_value: 0
+  bonus_combos:
+    initial_value: 0
+  bonus_nodes:
+    initial_value: 0

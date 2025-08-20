@@ -6,5 +6,17 @@ mode:
   use_wait_queue: true
   priority: 500
 
+
+slide_player:
+  mode_bonus_eob_started:
+    bonus_slide:
+      expire: 10
+
 event_player:
   mode_bonus_eob_started: bonus_finished
+
+show_player:
+  mode_bonus_eob_started:
+    bonus_races:
+      loops: 0
+      events_when_completed: trigger_bonus_combos

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dx41in1wt58dr"]
+[gd_scene load_steps=23 format=3 uid="uid://dx41in1wt58dr"]
 
 [ext_resource type="Texture2D" uid="uid://bbs514jryghy2" path="res://monitor/playfield.jpg" id="1_p2gby"]
 [ext_resource type="Script" uid="uid://d1w73p1wpy8sm" path="res://addons/gmc-toolbox/playfield/GMCPlayfield.gd" id="1_ujwwi"]
@@ -362,10 +362,27 @@ tracks/0/keys = {
 "values": [Vector2(233, 1212), Vector2(246, -112)]
 }
 
+[sub_resource type="Animation" id="Animation_svoss"]
+resource_name = "bonus_races"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SweepUp/GradientSquare3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(233, 1212), Vector2(233, -125)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_epack"]
 _data = {
 &"RESET": SubResource("Animation_h05v7"),
 &"ball_locked": SubResource("Animation_ln7ea"),
+&"bonus_races": SubResource("Animation_svoss"),
 &"prepare_multiball": SubResource("Animation_xjonp"),
 &"radial_out": SubResource("Animation_4xp5j"),
 &"spin1_burst": SubResource("Animation_p2gby"),
@@ -434,6 +451,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="GradientSquare3" type="Sprite2D" parent="SweepUp"]
+modulate = Color(1, 0, 0, 1)
 position = Vector2(246, -40)
 scale = Vector2(2.58594, 0.800337)
 texture = ExtResource("5_is4i2")
