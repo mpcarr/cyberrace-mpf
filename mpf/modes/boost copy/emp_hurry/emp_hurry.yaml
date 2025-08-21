@@ -1,0 +1,45 @@
+#config_version=6
+
+mode:
+  start_events: trigger_emp_hurry
+  stop_events: ball_ended, timer_emp_hurry_complete, emp_hurry_flashing_hit
+  priority: 1410
+
+shot_profiles: 
+  emp_hurry:
+    advance_on_hit: false
+    states: 
+     - name: flashing
+       show: flash_color
+       loops: -1
+       speed: 4
+       sync_ms: 250
+       show_tokens: 
+         color: FFFF00
+
+shots: 
+  emp_hurry:
+    switch: sw99
+    show_tokens: 
+      lights: spinner_top
+    profile: emp_hurry
+  
+timers:
+  emp_hurry:
+    start_running: true
+    tick_interval: 1s
+    end_value: 30
+    restart_on_complete: no
+    control_events:
+      - event: mode_emp_hurry_started
+        action: restart
+      - event: mode_emp_hurry_stopped
+        action: stop
+
+variable_player:
+  emp_hurry_flashing_hit.1:
+    score: 100000
+
+sound_player:
+  mode_emp_hurry_started: emp_mode
+

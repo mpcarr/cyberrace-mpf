@@ -282,7 +282,8 @@ switches:
     tags: s_bottom_spinner
   sw99:
     number: 1-0-1
-    type: NO
+    type: NC
+    tags: s_top_spinner
   
 coils:
   c_flipper_left_main:
