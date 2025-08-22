@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bgkqghftoe6ju"
+path="res://.godot/imported/Karl Casey - White Bat I - 18 Torn Flesh.mp3-480dafa14f4897728075772247e3555f.mp3str"
+
+[deps]
+
+source_file="res://resources/music/cyberrace/Karl Casey - White Bat I - 18 Torn Flesh.mp3"
+dest_files=["res://.godot/imported/Karl Casey - White Bat I - 18 Torn Flesh.mp3-480dafa14f4897728075772247e3555f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

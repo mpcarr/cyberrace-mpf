@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bb6qyypl7erki"
+path="res://.godot/imported/Karl Casey - White Bat I - 15 Countach.mp3-d3bcfa9f1eb929b34d5de75bdc10ef4d.mp3str"
+
+[deps]
+
+source_file="res://resources/music/cyberrace/Karl Casey - White Bat I - 15 Countach.mp3"
+dest_files=["res://.godot/imported/Karl Casey - White Bat I - 15 Countach.mp3-d3bcfa9f1eb929b34d5de75bdc10ef4d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

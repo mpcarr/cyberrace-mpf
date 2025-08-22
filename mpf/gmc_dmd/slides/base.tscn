@@ -5,9 +5,9 @@
 [ext_resource type="FontFile" uid="uid://cekcn7ed0n777" path="res://fonts/TeenyTinyPixls5.fnt" id="3_r8cgk"]
 [ext_resource type="Script" uid="uid://bojo76gkx41ow" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="4_20xw8"]
 [ext_resource type="FontFile" uid="uid://xx52by00kae6" path="res://fonts/sendha42.fnt" id="5_du778"]
-[ext_resource type="AudioStream" uid="uid://ua086w6a13da" path="res://resources/music/cyberrace/Karl Casey - White Bat I - 01 Elysium.mp3" id="6_6vrr4"]
+[ext_resource type="AudioStream" uid="uid://b7mj72n04wjxj" path="res://sounds/base_playlist.tres" id="6_6vrr4"]
 
-[node name="Attract" type="Control"]
+[node name="Base" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

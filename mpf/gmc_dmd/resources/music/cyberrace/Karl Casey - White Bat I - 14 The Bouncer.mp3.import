@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5w5404tdbtib"
+path="res://.godot/imported/Karl Casey - White Bat I - 14 The Bouncer.mp3-90409eb4d19adf3bb7edb558b18876f2.mp3str"
+
+[deps]
+
+source_file="res://resources/music/cyberrace/Karl Casey - White Bat I - 14 The Bouncer.mp3"
+dest_files=["res://.godot/imported/Karl Casey - White Bat I - 14 The Bouncer.mp3-90409eb4d19adf3bb7edb558b18876f2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
