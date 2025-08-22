@@ -40,6 +40,6 @@ variable_player:
   emp_hurry_flashing_hit.1:
     score: 100000
 
-sound_player:
-  mode_emp_hurry_started: emp_mode
+#sound_player:
+#  mode_emp_hurry_started: emp_mode
 

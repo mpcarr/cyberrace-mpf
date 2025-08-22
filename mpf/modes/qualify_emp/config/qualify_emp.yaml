@@ -1,7 +1,7 @@
 #config_version=6
 
 mode:
-  start_events: ball_started, emp_hurry_ended
+  start_events: ball_started, mode_emp_hurry_stopped
   stop_events: ball_ended, trigger_emp_hurry
   priority: 1400
 
@@ -63,9 +63,12 @@ show_player:
       loops: 0
 
 event_player:
-  qualify_emp_hit{current_player.emp_hits mod 20}: trigger_emp_hurry
+  qualify_emp_hit{current_player.emp_hits == 20}: trigger_emp_hurry
 
 variable_player:
   qualify_emp_hit:
     score: 25000
     emp_hits: 1
+  mode_qualify_emp_started:
+    emp_hits: 0
+    action: set

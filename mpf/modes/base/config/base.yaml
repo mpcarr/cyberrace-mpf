@@ -41,6 +41,8 @@ light_player:
       color: FFFFFF
     bumper1:
       color: FFFFFF
+    bumper2:
+      color: FFFFFF
 
 slide_player:
   mode_base_started: base

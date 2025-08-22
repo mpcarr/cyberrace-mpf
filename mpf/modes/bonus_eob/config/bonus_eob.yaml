@@ -10,7 +10,7 @@ mode:
 slide_player:
   mode_bonus_eob_started:
     bonus:
-      expire: 2
+      expire: 10
 
 #event_player:
 #  mode_bonus_eob_started: bonus_finished
