@@ -13,4 +13,12 @@ mode_points:
 player1_score:
   expire: null
   expire_secs: null
-  value: 1000000
+  value: 1420000
+player2_score:
+  expire: null
+  expire_secs: null
+  value: 459000
+player3_score:
+  expire: null
+  expire_secs: null
+  value: 523000
