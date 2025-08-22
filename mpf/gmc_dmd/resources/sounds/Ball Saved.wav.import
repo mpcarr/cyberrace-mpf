@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dpamy1ql5ere7"
+path="res://.godot/imported/Ball Saved.wav-6ccd0812f38b19fce60b027ffac6b9b3.sample"
+
+[deps]
+
+source_file="res://resources/sounds/Ball Saved.wav"
+dest_files=["res://.godot/imported/Ball Saved.wav-6ccd0812f38b19fce60b027ffac6b9b3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

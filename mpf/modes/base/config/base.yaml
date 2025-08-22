@@ -44,6 +44,9 @@ light_player:
 
 slide_player:
   mode_base_started: base
+  ball_save_base_saving_ball: 
+    ball_saved:
+      expire: 3s
 
 variable_player:
   s_bumper_1_active:
