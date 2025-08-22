@@ -31,6 +31,7 @@ modes:
   - skillshot
   - qualify_cyber
   - qualify_emp
+  - emp_hurry
   - qualify_multiball
   - multiball
 
@@ -61,7 +62,7 @@ servos:
     reset_position: 0.60
     reset_events: ball_ending, machine_reset_phase_3, game_starting, multiball_lock_bridge_full
     number: 1-0-11
-    debug: true
+    include_in_ball_search: false
   servo_bridge:           ##### servo controlling ramp diverter
     servo_min: 0.196    ##### OPP range 0-2550µs, my servo min is 500µs, 500/2550=0.196 
     servo_max: 0.98     ##### my servo max is 2500µs, 2500/2550=0.98
@@ -72,7 +73,7 @@ servos:
     reset_position: 0.4
     reset_events: machine_reset_phase_3, game_starting
     number: 1-0-10
-    debug: true
+    include_in_ball_search: false
 
 config:
   - config-lights.yaml
@@ -282,7 +283,8 @@ switches:
     tags: s_bottom_spinner
   sw99:
     number: 1-0-1
-    type: NO
+    type: NC
+    tags: s_top_spinner
   
 coils:
   c_flipper_left_main:

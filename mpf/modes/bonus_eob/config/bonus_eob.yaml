@@ -2,21 +2,34 @@
 
 mode:
   start_events: ball_ending
-  stop_events: bonus_finished
+  stop_events: trigger_bonus_complete
   use_wait_queue: true
-  priority: 500
+  priority: 1001
 
 
 slide_player:
   mode_bonus_eob_started:
-    bonus_slide:
+    bonus:
       expire: 10
 
-event_player:
-  mode_bonus_eob_started: bonus_finished
+#event_player:
+#  mode_bonus_eob_started: bonus_finished
 
 show_player:
   mode_bonus_eob_started:
     bonus_races:
       loops: 0
       events_when_completed: trigger_bonus_combos
+  trigger_bonus_combos:
+    bonus_combos:
+      loops: 0
+      events_when_completed: trigger_bonus_nodes
+  trigger_bonus_nodes:
+    bonus_nodes:
+      loops: 0
+      events_when_completed: trigger_bonus_summary
+  trigger_bonus_summary:
+    bonus_summary:
+      loops: 0
+      events_when_completed: trigger_bonus_complete
+

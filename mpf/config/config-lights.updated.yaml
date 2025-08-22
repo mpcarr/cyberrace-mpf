@@ -619,7 +619,7 @@ lights:
     previous: l111
     subtype: led
     type: rgb
-    tags: T_GI, rgb, bumper3
+    tags: T_GI, rgb
     x: 0.6704796996648082
     y: 0.3262935586061246
   l113:
