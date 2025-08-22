@@ -106,77 +106,77 @@ lights:
     previous: l20
     subtype: led
     type: grb
-    tags: node1, insert, rgb
+    tags: node1, insert
   l22:
     previous: l21
     subtype: led
     type: grb
-    tags: nodes2, insert, rgb
+    tags: nodes2, insert
   l23:
     previous: l22
     subtype: led
     type: grb
-    tags: node3, insert, rgb
+    tags: node3, insert
   l24:
     previous: l23
     subtype: led
     type: grb
-    tags: node4, insert, rgb
+    tags: node4, insert
   l25:
     previous: l24
     subtype: led
     type: grb
-    tags: node5, insert, rgb
+    tags: node5, insert
   l26:
     previous: l25
     subtype: led
     type: grb
-    tags: node6  , insert, rgb
+    tags: node6  , insert
   l27:
     previous: l26
     subtype: led
     type: grb
-    tags: node7, insert, rgb
+    tags: node7, insert
   l28:
     previous: l27
     subtype: led
     type: grb
-    tags: node8, insert, rgb
+    tags: node8, insert
   l29:
     previous: l28
     subtype: led
     type: grb
-    tags: node9, insert, rgb
+    tags: node9, insert
   l30:
     previous: l29
     subtype: led
     type: grb
-    tags: node10, insert, rgb
+    tags: node10, insert
   l31:
     previous: l30
     subtype: led
     type: grb
-    tags: node11, insert, rgb
+    tags: node11, insert
   l32:
     previous: l31
     subtype: led
     type: grb
-    tags: node12, insert, rgb
+    tags: node12, insert
   l33:
     previous: l32
     subtype: led
     type: grb
-    tags: node13, insert, rgb
+    tags: node13, insert, nodes, rgb
   l34:
     previous: l33
     subtype: led
     type: grb
-    tags: node14, insert, rgb
+    tags: node14, insert
   l35:
     previous: l34
     subtype: led
     type: grb
-    tags: node15, insert, rgb
+    tags: node15, insert
   l36:
     previous: l35
     subtype: led

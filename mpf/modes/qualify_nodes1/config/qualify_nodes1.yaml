@@ -1,0 +1,77 @@
+#config_version=6
+
+mode:
+  start_events: ball_started
+  stop_events: ball_ended
+  priority: 1600
+
+shot_profiles: 
+  nodes:
+    advance_on_hit: false
+    states: 
+     - name: red
+       show: led_color
+       show_tokens: 
+         color: FF0000
+       sync_ms: 0
+     - name: green
+       show: led_color
+       show_tokens: 
+         color: 00FF00
+       sync_ms: 0
+
+shots: 
+  nodes1_1:
+    switch: sw42
+    show_tokens: 
+      lights: node1
+    profile: nodes
+    control_events: 
+      - events: nodes1_hit{current_player.node_hits == 1}
+        state: 1
+  nodes1_2:
+    switch: sw42
+    show_tokens: 
+      lights: node4
+    profile: nodes
+    control_events: 
+      - events: nodes1_hit{current_player.node_hits == 2}
+        state: 1
+  nodes1_3:
+    switch: sw42
+    show_tokens: 
+      lights: node8
+    profile: nodes
+    control_events: 
+      - events: nodes1_hit{current_player.node_hits == 3}
+        state: 1
+  nodes1_4:
+    switch: sw42
+    show_tokens: 
+      lights: node12
+    profile: nodes
+    control_events: 
+      - events: nodes1_hit{current_player.node_hits == 4}
+        state: 1
+
+shot_groups:
+  nodes1:
+    shots: nodes1_1,nodes1_2,nodes1_3,nodes1_4
+    restart_events: mode_qualify_nodes1_started
+
+show_player:
+  nodes1_hit: 
+    flash_color:
+      show_tokens:
+        lights: nodes
+        color: FFFF00
+      speed: 4
+      loops: 0
+
+event_player:
+  nodes1_green_on_complete: trigger_complete_nodes
+
+variable_player:
+  nodes1_hit.1{current_player.node_hits<5}:
+    score: 50000
+    node_hits: 1

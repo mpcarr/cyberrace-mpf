@@ -1,8 +1,8 @@
 #config_version=6
 
 mode:
-  start_events: ball_started
-  stop_events: ball_ended
+  start_events: ball_started, emp_hurry_ended
+  stop_events: ball_ended, trigger_emp_hurry
   priority: 1400
 
 shot_profiles: 
@@ -28,6 +28,16 @@ shots:
     show_tokens: 
       lights: bumper2
     profile: qualify_emp
+  emp_pop3:
+    switch: s_bumper_3
+    show_tokens: 
+      lights: bumper3
+    profile: qualify_emp
+
+shot_groups:
+  qualify_emp:
+    shots: emp_pop1, emp_pop2, emp_pop3
+    restart_events: mode_qualify_emp_started
 
 show_player:
   emp_pop1_hit: 
@@ -37,3 +47,25 @@ show_player:
         color: FF00FF
       speed: 4
       loops: 0
+  emp_pop2_hit: 
+    flash_color:
+      show_tokens:
+        lights: bumper2
+        color: FF00FF
+      speed: 4
+      loops: 0
+  emp_pop3_hit: 
+    flash_color:
+      show_tokens:
+        lights: bumper3
+        color: FF00FF
+      speed: 4
+      loops: 0
+
+event_player:
+  qualify_emp_hit{current_player.emp_hits mod 20}: trigger_emp_hurry
+
+variable_player:
+  qualify_emp_hit:
+    score: 25000
+    emp_hits: 1
