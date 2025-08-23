@@ -1,12 +1,12 @@
 #config_version=6
 
 mode:
-  start_events: trigger_race1
-  stop_events: timer_race1_complete, ball_ended
+  start_events: trigger_race3
+  stop_events: timer_race3_complete, ball_ended
   priority: 1005
 
 shot_profiles: 
-  race_profile:
+  race3_profile:
     advance_on_hit: false
     states: 
      - name: flashing
@@ -18,36 +18,36 @@ shot_profiles:
          color: ff0000
 
 shots: 
-  race1_leftorbit:
-    switch: sw41
+  race3_bottomspinner:
+    switch: sw98
     show_tokens: 
-      lights: left_orbit
-    profile: race_profile
-  race1_rightorbit:
-    switch: sw81
+      lights: bottom_spinner
+    profile: race3_profile
+  race3_topspinner:
+    switch: sw99
     show_tokens: 
-      lights: right_orbit
-    profile: race_profile
+      lights: top_spinner
+    profile: race3_profile
 
 shot_groups:
-  race_1:
-    shots: race1_leftorbit, race1_rightorbit
-    restart_events: mode_race_1_started
+  race_3:
+    shots: race3_bottomspinner, race3_topspinner
+    restart_events: mode_race_3_started
 
 timers:
-  race1:
+  race3:
     start_running: true
     tick_interval: 1s
     end_value: 30
     restart_on_complete: no
     control_events:
-      - event: mode_race_1_started
+      - event: mode_race_3_started
         action: restart
-      - event: mode_race_1_stopped
+      - event: mode_race_3_stopped
         action: stop
 
 event_player: 
-  mode_race_1_started: 
+  mode_race_3_started: 
     - race_started
   ball_ending: 
     - race_ended
@@ -55,26 +55,25 @@ event_player:
     - race_ended
 
 variable_player:
-  race_1_hit:
+  race_3_hit:
     score: 1000000
 
 show_player:
-  race_1_hit: 
+  race_3_hit: 
     sweep_up:
       loops: 0
       speed: 4
 
-light_player:
-  mode_race_1_started:
-    T_GI: 
-        color: FF0000
-
-
 slide_player:
-  mode_race_1_starting:
+  mode_race_3_starting:
     race1_selection:
       action: remove
     race2_selection:
       action: remove
     race3_selection:
       action: remove
+
+light_player:
+  mode_race_3_started:
+    T_GI: 
+        color: FF0000

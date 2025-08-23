@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b022o46gpn26h"]
+[gd_scene load_steps=8 format=3 uid="uid://df0etj1e66ks0"]
 
-[ext_resource type="Script" uid="uid://cdwas3gbf7w3g" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_rabqq"]
-[ext_resource type="FontFile" uid="uid://xx52by00kae6" path="res://fonts/sendha42.fnt" id="3_bn7hj"]
-[ext_resource type="AudioStream" uid="uid://bh52xfispg1f0" path="res://resources/sounds/skillshot.wav" id="3_rabqq"]
+[ext_resource type="Script" uid="uid://cdwas3gbf7w3g" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_jvy4p"]
+[ext_resource type="FontFile" uid="uid://xx52by00kae6" path="res://fonts/sendha42.fnt" id="2_igf5u"]
+[ext_resource type="AudioStream" uid="uid://er5vvhlurhx6" path="res://resources/sounds/super_skillshot.wav" id="3_igf5u"]
 
 [sub_resource type="Animation" id="Animation_qv1dn"]
 length = 0.001
@@ -59,7 +59,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_rabqq")
+script = ExtResource("1_jvy4p")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -86,13 +86,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_constants/line_spacing = -10
-theme_override_fonts/font = ExtResource("3_bn7hj")
+theme_override_fonts/font = ExtResource("2_igf5u")
 theme_override_font_sizes/font_size = 42
-text = "SKILLSHOT"
+text = "SUPER
+SKILLSHOT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_rabqq")
+stream = ExtResource("3_igf5u")
 autoplay = true
 bus = &"voice"

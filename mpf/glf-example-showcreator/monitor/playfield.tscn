@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dx41in1wt58dr"]
+[gd_scene load_steps=24 format=3 uid="uid://dx41in1wt58dr"]
 
 [ext_resource type="Texture2D" uid="uid://bbs514jryghy2" path="res://monitor/playfield.jpg" id="1_p2gby"]
 [ext_resource type="Script" uid="uid://d1w73p1wpy8sm" path="res://addons/gmc-toolbox/playfield/GMCPlayfield.gd" id="1_ujwwi"]
@@ -156,6 +156,18 @@ tracks/11/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0.717647, 0, 0.85098)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("RedFade/GradientSquare3:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.121569, 0.231373, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ln7ea"]
@@ -378,6 +390,22 @@ tracks/0/keys = {
 "values": [Vector2(233, 1212), Vector2(246, -112)]
 }
 
+[sub_resource type="Animation" id="Animation_4tgau"]
+resource_name = "red_fade"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RedFade/GradientSquare3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.121569, 0.231373, 1), Color(1, 0.121569, 0.231373, 0), Color(1, 0.121569, 0.231373, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_epack"]
 _data = {
 &"RESET": SubResource("Animation_h05v7"),
@@ -385,6 +413,7 @@ _data = {
 &"bonus_races": SubResource("Animation_svoss"),
 &"prepare_multiball": SubResource("Animation_xjonp"),
 &"radial_out": SubResource("Animation_4xp5j"),
+&"red_fade": SubResource("Animation_4tgau"),
 &"spin1_burst": SubResource("Animation_p2gby"),
 &"spin2_burst": SubResource("Animation_e2jqc"),
 &"sweep_down": SubResource("Animation_p3fmy"),
@@ -446,6 +475,7 @@ scale = Vector2(2.58594, 0.186611)
 texture = ExtResource("5_is4i2")
 
 [node name="SweepUp" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -453,6 +483,17 @@ offset_bottom = 40.0
 [node name="GradientSquare3" type="Sprite2D" parent="SweepUp"]
 position = Vector2(246, -40)
 scale = Vector2(2.58594, 0.800337)
+texture = ExtResource("5_is4i2")
+
+[node name="RedFade" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GradientSquare3" type="Sprite2D" parent="RedFade"]
+modulate = Color(1, 0.121569, 0.231373, 0)
+position = Vector2(233, 619.722)
+scale = Vector2(2.58594, 5.42751)
 texture = ExtResource("5_is4i2")
 
 [node name="Control" type="Control" parent="."]

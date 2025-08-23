@@ -26,7 +26,7 @@ lights:
     previous: l03
     subtype: led
     type: grb
-    tags: spinner_top, insert, rgb
+    tags: spinner_top, insert, rgb, race3_selection
     x: 0.3930398239414394
     y: 0.20274551214361142
   l05:
@@ -89,7 +89,7 @@ lights:
     previous: l12
     subtype: led
     type: grb
-    tags: right_ramp, insert, race1_selection, rgb
+    tags: right_ramp, insert, race2_selection, rgb
     x: 0.5803117400547134
     y: 0.4139387539598733
   l14:
@@ -103,7 +103,7 @@ lights:
     previous: l14
     subtype: led
     type: grb
-    tags: right_orbit, insert, rgb
+    tags: right_orbit, insert, rgb, race1_selection
     x: 0.7837676489185172
     y: 0.4065469904963041
   l16:
@@ -180,7 +180,7 @@ lights:
     previous: l25
     subtype: led
     type: grb
-    tags: node6  , insert, rgb, nodes
+    tags: node6, insert, rgb, nodes
     x: 0.7490876644530962
     y: 0.5913410770855332
   l27:
@@ -320,7 +320,7 @@ lights:
     previous: l45
     subtype: led
     type: grb
-    tags: race_2, insert, race1_selection, nonrgb
+    tags: race_2, insert, race2_selection, nonrgb
     x: 0.3953518229058008
     y: 0.7666314677930306
   l47:
@@ -418,7 +418,7 @@ lights:
     previous: l59
     subtype: led
     type: grb
-    tags: spinner_bottom, insert, rgb
+    tags: spinner_bottom, insert, rgb, race3_selection
     x: 0.1826479181845512
     y: 0.5839493136219641
   l61:
@@ -460,14 +460,14 @@ lights:
     previous: l65
     subtype: led
     type: grb
-    tags: left_orbit, insert, rgb
+    tags: left_orbit, insert, rgb, race1_selection
     x: 0.17802392025582842
     y: 0.3579725448785639
   l67:
     previous: l66
     subtype: led
     type: grb
-    tags: left_ramp, insert, race1_selection, rgb
+    tags: left_ramp, insert, race2_selection, rgb
     x: 0.36991983429782527
     y: 0.3907074973600845
   l68:

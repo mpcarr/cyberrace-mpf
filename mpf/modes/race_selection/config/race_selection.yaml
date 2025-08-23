@@ -2,7 +2,7 @@
 
 mode:
   start_events: ball_hold_race_ready_full
-  stop_events: race_started
+  stop_events: race_started, rae_selection_confirmed
   priority: 1030
 
 shot_profiles: 
@@ -34,6 +34,8 @@ shots:
       lights: race1_selection
     profile: race_selection
     control_events: 
+      - events: mode_race_selection_started
+        state: 1
       - events: light_race1_selection
         state: 1
       - events: light_race1_complete
@@ -56,55 +58,104 @@ shots:
         state: 1
       - events: light_race3_complete
         state: 2
-  rs4_tri:
-    show_tokens: 
-      lights: lrace4_selection56
-    profile: race_selection
-    control_events: 
-      - events: light_race4_selection
-        state: 1
-      - events: light_race4_complete
-        state: 2
-  rs5_tri:
-    show_tokens: 
-      lights: race5_selection
-    profile: race_selection
-    control_events: 
-      - events: light_race5_selection
-        state: 1
-      - events: light_race5_complete
-        state: 2
-  rs6_tri:
-    show_tokens: 
-      lights: race6_selection
-    profile: race_selection
-    control_events: 
-      - events: light_race6_selection
-        state: 1
-      - events: light_race6_complete
-        state: 2
+  # rs4_tri:
+  #   show_tokens: 
+  #     lights: lrace4_selection
+  #   profile: race_selection
+  #   control_events: 
+  #     - events: light_race4_selection
+  #       state: 1
+  #     - events: light_race4_complete
+  #       state: 2
+  # rs5_tri:
+  #   show_tokens: 
+  #     lights: race5_selection
+  #   profile: race_selection
+  #   control_events: 
+  #     - events: light_race5_selection
+  #       state: 1
+  #     - events: light_race5_complete
+  #       state: 2
+  # rs6_tri:
+  #   show_tokens: 
+  #     lights: race6_selection
+  #   profile: race_selection
+  #   control_events: 
+  #     - events: light_race6_selection
+  #       state: 1
+  #     - events: light_race6_complete
+  #       state: 2
 
 shot_groups: 
   race_selection:
-    shots: rs1_tri,rs2_tri,rs3_tri,rs4_tri,rs5_tri,rs6_tri
-    rotate_left_events: s_left_flipper_active
-    rotate_right_events: s_right_flipper_active
+    shots: rs1_tri,rs2_tri,rs3_tri #,rs4_tri,rs5_tri,rs6_tri
+    rotate_left_events: s_left_flipper_active, s_63_active
+    rotate_right_events: s_right_flipper_active, s_62_active
 
 event_player: 
-  mode_race_selection_started{current_player.player_shot_rs1_tri < 2}: 
+  player_shot_rs1_tri{current_player.shot_rs1_tri == 1}: 
     - light_race1_selection
-  mode_race_selection_started{current_player.player_shot_rs2_tri < 2 && current_player.player_shot_rs1_tri==2}: 
+  player_shot_rs2_tri{current_player.shot_rs2_tri == 1}: 
     - light_race2_selection
-  mode_race_selection_started{current_player.player_shot_rs3_tri < 2 && current_player.player_shot_rs1_tri==2 && current_player.player_shot_rs2_tri==2}: 
+  player_shot_rs2_tri{current_player.shot_rs3_tri == 1}: 
     - light_race3_selection
-  mode_race_selection_started{current_player.player_shot_rs3_tri < 2 && current_player.player_shot_rs1_tri==2 && current_player.player_shot_rs2_tri==2 && current_player.player_shot_rs3_tri==2}: 
-    - light_race4_selection
-  mode_race_selection_started{current_player.player_shot_rs3_tri < 2 && current_player.player_shot_rs1_tri==2 && current_player.player_shot_rs2_tri==2 && current_player.player_shot_rs3_tri==2 && current_player.player_shot_rs4_tri==2}: 
-    - light_race5_selection
-  mode_race_selection_started{current_player.player_shot_rs3_tri < 2 && current_player.player_shot_rs1_tri==2 && current_player.player_shot_rs2_tri==2 && current_player.player_shot_rs3_tri==2 && current_player.player_shot_rs4_tri==2 && current_player.player_shot_rs5_tri==2}: 
-    - light_race6_selection
+#  mode_race_selection_started{current_player.player_shot_rs3_tri < 2 && current_player.player_shot_rs1_tri==2 && current_player.player_shot_rs2_tri==2 && current_player.player_shot_rs3_tri==2}: 
+#    - light_race4_selection
+#  mode_race_selection_started{current_player.player_shot_rs3_tri < 2 && current_player.player_shot_rs1_tri==2 && current_player.player_shot_rs2_tri==2 && current_player.player_shot_rs3_tri==2 && current_player.player_shot_rs4_tri==2}: 
+#    - light_race5_selection
+#  mode_race_selection_started{current_player.player_shot_rs3_tri < 2 && current_player.player_shot_rs1_tri==2 && current_player.player_shot_rs2_tri==2 && current_player.player_shot_rs3_tri==2 && current_player.player_shot_rs4_tri==2 && current_player.player_shot_rs5_tri==2}: 
+#    - light_race6_selection
   flippers_select: 
     - race_selection_confirmed
+    - trigger_race1{current_player.shot_rs1_tri==1}
+    - trigger_race2{current_player.shot_rs1_tri==2}
+    - trigger_race3{current_player.shot_rs1_tri==3}
+  timer_race_selection_complete:
+    - race_selection_confirmed
+    - trigger_race1{current_player.shot_rs1_tri==1}
+    - trigger_race2{current_player.shot_rs1_tri==2}
+    - trigger_race3{current_player.shot_rs1_tri==3}
 
 
+timers:
+  race_selection:
+    start_value: 10
+    end_value: 0
+    direction: down
+    start_running: true
 
+show_player:
+  mode_race_selection_started: red_fade
+
+sound_player:
+  mode_race_selection_started: select_race
+
+slide_player:
+  light_race1_selection:
+    race1_selection:
+      action: play
+    race2_selection:
+      action: remove
+    race3_selection:
+      action: remove
+  light_race2_selection:
+    race1_selection:
+      action: remove
+    race2_selection:
+      action: play
+    race3_selection:
+      action: remove
+  light_race3_selection:
+    race1_selection:
+      action: remove
+    race2_selection:
+      action: remove
+    race3_selection:
+      action: play
+  mode_race_selection_stopping:
+    race1_selection:
+      action: remove
+    race2_selection:
+      action: remove
+    race3_selection:
+      action: remove

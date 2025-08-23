@@ -26,6 +26,10 @@ modes:
   - base
   - bonus_eob
   - qualify_race
+  - race_selection
+  - race_1
+  - race_2
+  - race_3
   - qualify_boost
   - boost
   - skillshot
@@ -34,6 +38,7 @@ modes:
   - emp_hurry
   - qualify_multiball
   - multiball
+  - qualify_nodes1
 
 opp:
    ports: /dev/ttyACM0, /dev/ttyACM1
@@ -63,13 +68,14 @@ servos:
     reset_events: ball_ending, machine_reset_phase_3, game_starting, multiball_lock_bridge_full
     number: 1-0-11
     include_in_ball_search: false
+    debug: true
   servo_bridge:           ##### servo controlling ramp diverter
     servo_min: 0.196    ##### OPP range 0-2550µs, my servo min is 500µs, 500/2550=0.196 
     servo_max: 0.98     ##### my servo max is 2500µs, 2500/2550=0.98
     speed_limit: 160
     positions:          ##### percentages along range of 0.196(500µs=0) to 0.98(2500µs=1)
-      0.83: qualify_multiball_locks_on_complete #bridge_div_open      ## 800µs  I believe open==down
-      0.4: trigger_bridge_multiball #bridge_div_closed   ## 1775µs  and close==up, but I may be wrong :)
+      0.83: s_right_flipper_active #bridge_div_open      ## 800µs  I believe open==down
+      0.4: s_left_flipper_active #bridge_div_closed   ## 1775µs  and close==up, but I may be wrong :)
     reset_position: 0.4
     reset_events: machine_reset_phase_3, game_starting
     number: 1-0-10
@@ -372,7 +378,6 @@ playfields:
   playfield:
     tags: default
     default_source_device: plunger
-    enable_ball_search: true
 
 flippers:
   left_flipper:

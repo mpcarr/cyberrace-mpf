@@ -17,7 +17,7 @@ shots:
     show_tokens: 
       lights: cyber_y
   b_shot:
-    switch: sw85
+    switch: sw80
     profile: cyber_letter
     show_tokens: 
       lights: cyber_b

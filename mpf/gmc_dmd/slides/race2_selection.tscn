@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3tbnqt8dr77y"]
+
+[ext_resource type="Script" uid="uid://cdwas3gbf7w3g" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_hkmuo"]
+[ext_resource type="FontFile" uid="uid://cv4telcgj3028" path="res://fonts/sendha24.fnt" id="2_f2sn6"]
+[ext_resource type="Script" uid="uid://bojo76gkx41ow" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_f2sn6"]
+[ext_resource type="FontFile" uid="uid://cxnpapw04k8m7" path="res://fonts/sendha12.fnt" id="3_k4kl6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rabqq"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.109804, 0, 1)
+border_blend = true
+
+[node name="Race2Selection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hkmuo")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rabqq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.133333, 0, 1)
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("2_f2sn6")
+theme_override_font_sizes/font_size = 24
+text = "RACE 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 0.133333, 0, 1)
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("2_f2sn6")
+theme_override_font_sizes/font_size = 24
+text = "RAMPS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MPFVariable" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.145
+offset_top = 2.545
+offset_right = 4.14499
+offset_bottom = 2.545
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_k4kl6")
+theme_override_font_sizes/font_size = 12
+text = "10"
+script = ExtResource("3_f2sn6")
+variable_name = "race_selection_race_selection_tick"
+metadata/_custom_type_script = "uid://bojo76gkx41ow"

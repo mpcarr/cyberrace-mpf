@@ -26,52 +26,63 @@ shots:
     show_tokens: 
       lights: node1
     profile: nodes
-    control_events: 
-      - events: nodes1_hit{current_player.node_hits == 1}
-        state: 1
+    #control_events: 
+    #  - events: nodes1_1_hit{current_player.shot_nodes1_1 != 1}
+    #    state: 1
   nodes1_2:
     switch: sw42
     show_tokens: 
       lights: node4
     profile: nodes
-    control_events: 
-      - events: nodes1_hit{current_player.node_hits == 2}
-        state: 1
+    #control_events: 
+    #  - events: nodes1_2_hit{current_player.shot_nodes1_2 != 1}
+    #    state: 1
   nodes1_3:
     switch: sw42
     show_tokens: 
       lights: node8
     profile: nodes
-    control_events: 
-      - events: nodes1_hit{current_player.node_hits == 3}
-        state: 1
+    #control_events: 
+    #  - events: nodes1_3_hit{current_player.shot_nodes1_3 != 1}
+    #    state: 1
   nodes1_4:
     switch: sw42
     show_tokens: 
       lights: node12
     profile: nodes
-    control_events: 
-      - events: nodes1_hit{current_player.node_hits == 4}
-        state: 1
-
-shot_groups:
-  nodes1:
-    shots: nodes1_1,nodes1_2,nodes1_3,nodes1_4
-    restart_events: mode_qualify_nodes1_started
+    #control_events: 
+    #  - events: nodes1_4_hit{current_player.shot_nodes1_4 != 1}
+    #    state: 1
 
 show_player:
-  nodes1_hit: 
+  nodes1_1_hit: 
     flash_color:
       show_tokens:
         lights: nodes
         color: FFFF00
       speed: 4
-      loops: 0
+      loops: 2
 
 event_player:
   nodes1_green_on_complete: trigger_complete_nodes
 
 variable_player:
-  nodes1_hit.1{current_player.node_hits<5}:
-    score: 50000
-    node_hits: 1
+  mode_qualify_nodes1_started:
+    node_hits:
+      int: 0
+      action: set
+  # nodes1_4_hit.4{current_player.node_hits==3}:
+  #   score: 50000
+  #   node_hits: 1
+  # nodes1_3_hit.3{current_player.node_hits==2}:
+  #   score: 50000
+  #   node_hits: 1
+  # nodes1_2_hit.2{current_player.node_hits==1}:
+  #   score: 50000
+  #   node_hits: 1
+  # nodes1_1_hit.1{current_player.node_hits==0}:
+  #   score: 50000
+  #   node_hits: 1
+  
+  
+  

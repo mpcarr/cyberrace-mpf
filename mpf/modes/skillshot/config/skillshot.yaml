@@ -46,7 +46,7 @@ shots:
       lights: bonus_lane3
     profile: skillshot
   skill_leftramp:
-    switch: sw85
+    switch: sw80
     show_tokens: 
       lights: left_ramp
     profile: skillshot
@@ -87,8 +87,6 @@ slide_player:
   award_skillshot:
     skillshot_overlay:
       expire: 3s
-
-sound_player:
-  award_skillshot: skillshot
-  debug: true
-
+  award_super_skillshot:
+    super_skillshot:
+      expire: 3s

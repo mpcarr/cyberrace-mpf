@@ -82,16 +82,22 @@ shots:
 shot_groups: 
   qualify_race:
     shots: left_outlane,left_inlane,right_inlane,right_outlane
-    reset_events: mode_race_ended
+    reset_events: race_ended
     rotate_left_events: s_left_flipper_active
     rotate_right_events: s_right_flipper_active
 
 ball_holds: 
   race_ready:
-    enable_events: qualify_race_on_complete, mode_qualify_race_started{current_player.player_shot_right_orbit_race_qualify==1}
-    disable_events: race_started
+    enable_events: qualify_race_on_complete, mode_qualify_race_started{current_player.shot_right_orbit_race_qualify==1}
+    disable_events: rae_selection_confirmed
     hold_devices: race_scoop
     balls_to_hold: 1
-    release_all_events: race_selection_confirmed
+    release_all_events: race_selection_confirmed.1
 
+sound_player:
+  qualify_race_on_complete: race_ready
 
+slide_player:
+  qualify_race_on_complete:
+    race_ready:
+      expire: 3s
